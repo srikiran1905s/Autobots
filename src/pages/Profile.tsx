@@ -17,10 +17,12 @@ import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const Profile = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { isDarkMode, toggleDarkMode } = useTheme();
   
   // User State
   const [user, setUser] = useState({
@@ -38,7 +40,6 @@ const Profile = () => {
 
   // Preferences State
   const [preferences, setPreferences] = useState({
-    darkMode: true,
     emailNotifications: true,
     pushNotifications: false,
     profileVisibility: true,
@@ -442,8 +443,8 @@ const Profile = () => {
                       <p className="text-sm text-muted-foreground">Toggle dark theme</p>
                     </div>
                     <Switch
-                      checked={preferences.darkMode}
-                      onCheckedChange={() => togglePreference('darkMode')}
+                      checked={isDarkMode}
+                      onCheckedChange={toggleDarkMode}
                     />
                   </div>
 
