@@ -1,4 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
+import { LogIn } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import logo from "../../logo.png";
 
 const Header = () => {
@@ -56,6 +58,15 @@ const Header = () => {
               <span className={`absolute bottom-0 left-0 right-0 h-0.5 bg-primary transition-all ${
                 isActive("/obd") ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
               }`} />
+            </Link>
+            <Link to="/signin">
+              <Button 
+                variant="outline" 
+                className="font-rajdhani font-semibold text-base border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+              >
+                <LogIn className="w-4 h-4 mr-2" />
+                Sign In
+              </Button>
             </Link>
           </nav>
         </div>
