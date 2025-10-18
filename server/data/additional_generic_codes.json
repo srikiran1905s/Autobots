@@ -1,0 +1,324 @@
+[
+  {
+    "code": "P0001",
+    "make": "Generic",
+    "meaning": "Fuel Volume Regulator Control Circuit/Open",
+    "possible_causes": ["Wiring issue", "Faulty Fuel Volume Regulator", "Faulty PCM"],
+    "troubleshooting_steps": ["Check wiring and connectors", "Test Fuel Volume Regulator", "Check PCM"]
+  },
+  {
+    "code": "P0011",
+    "make": "Generic",
+    "meaning": "'A' Camshaft Position - Timing Over-Advanced (Bank 1)",
+    "possible_causes": ["Low/dirty engine oil", "Faulty VVT solenoid", "Timing chain/belt issue", "Faulty camshaft actuator"],
+    "troubleshooting_steps": ["Check engine oil level and condition", "Test VVT solenoid operation", "Inspect timing components", "Test camshaft actuator"]
+  },
+  {
+    "code": "P0014",
+    "make": "Generic",
+    "meaning": "'B' Camshaft Position - Timing Over-Advanced (Bank 1)",
+    "possible_causes": ["Low/dirty engine oil", "Faulty VVT solenoid (exhaust)", "Timing chain/belt issue", "Faulty camshaft actuator"],
+    "troubleshooting_steps": ["Check engine oil", "Test exhaust VVT solenoid", "Inspect timing components", "Test exhaust camshaft actuator"]
+  },
+  {
+    "code": "P0016",
+    "make": "Generic",
+    "meaning": "Crankshaft Position - Camshaft Position Correlation (Bank 1 Sensor A)",
+    "possible_causes": ["Timing chain/belt jumped", "Faulty crankshaft sensor", "Faulty camshaft sensor", "Tone ring/reluctor wheel damage"],
+    "troubleshooting_steps": ["Inspect timing belt/chain alignment", "Test crankshaft sensor", "Test camshaft sensor", "Inspect tone rings"]
+  },
+  {
+    "code": "P0030",
+    "make": "Generic",
+    "meaning": "HO2S Heater Control Circuit (Bank 1 Sensor 1)",
+    "possible_causes": ["Faulty O2 sensor heater", "Blown fuse", "Wiring issue", "Faulty PCM"],
+    "troubleshooting_steps": ["Check O2 sensor heater fuse", "Test O2 sensor heater resistance", "Check wiring to O2 sensor", "Check PCM"]
+  },
+  {
+    "code": "P0036",
+    "make": "Generic",
+    "meaning": "HO2S Heater Control Circuit (Bank 1 Sensor 2)",
+    "possible_causes": ["Faulty O2 sensor heater", "Blown fuse", "Wiring issue", "Faulty PCM"],
+    "troubleshooting_steps": ["Check O2 sensor heater fuse", "Test O2 sensor heater resistance", "Check wiring to O2 sensor", "Check PCM"]
+  },
+  {
+    "code": "P0050",
+    "make": "Generic",
+    "meaning": "HO2S Heater Control Circuit (Bank 2 Sensor 1)",
+    "possible_causes": ["Faulty O2 sensor heater", "Blown fuse", "Wiring issue", "Faulty PCM"],
+    "troubleshooting_steps": ["Check O2 sensor heater fuse", "Test O2 sensor heater resistance", "Check wiring to O2 sensor", "Check PCM"]
+  },
+  {
+    "code": "P0056",
+    "make": "Generic",
+    "meaning": "HO2S Heater Control Circuit (Bank 2 Sensor 2)",
+    "possible_causes": ["Faulty O2 sensor heater", "Blown fuse", "Wiring issue", "Faulty PCM"],
+    "troubleshooting_steps": ["Check O2 sensor heater fuse", "Test O2 sensor heater resistance", "Check wiring to O2 sensor", "Check PCM"]
+  },
+  {
+    "code": "P0068",
+    "make": "Generic",
+    "meaning": "MAP/MAF - Throttle Position Correlation",
+    "possible_causes": ["Vacuum leak", "Dirty throttle body", "Faulty MAP sensor", "Faulty MAF sensor", "Faulty TPS"],
+    "troubleshooting_steps": ["Check for vacuum leaks", "Clean throttle body", "Test MAP sensor", "Test MAF sensor", "Test TPS"]
+  },
+  {
+    "code": "P0087",
+    "make": "Generic",
+    "meaning": "Fuel Rail/System Pressure - Too Low",
+    "possible_causes": ["Clogged fuel filter", "Weak fuel pump", "Faulty fuel pressure regulator", "Fuel leak", "Faulty fuel pressure sensor"],
+    "troubleshooting_steps": ["Check fuel filter", "Test fuel pump pressure", "Test fuel pressure regulator", "Inspect for fuel leaks", "Test fuel pressure sensor"]
+  },
+  {
+    "code": "P0100",
+    "make": "Generic",
+    "meaning": "Mass or Volume Air Flow 'A' Circuit Malfunction",
+    "possible_causes": ["Faulty MAF sensor", "Wiring issue", "Intake air leak", "Dirty MAF sensor"],
+    "troubleshooting_steps": ["Inspect MAF sensor wiring", "Clean MAF sensor", "Check for intake leaks", "Test/replace MAF sensor"]
+  },
+  {
+    "code": "P0101",
+    "make": "Generic",
+    "meaning": "Mass Air Flow (MAF) Sensor Circuit Range/Performance Problem",
+    "possible_causes": ["Dirty or faulty MAF sensor", "Vacuum leak after the MAF sensor", "Clogged air filter", "Wiring issue to MAF sensor"],
+    "troubleshooting_steps": ["Inspect air filter", "Clean MAF sensor", "Check for intake leaks", "Inspect MAF wiring", "Replace MAF sensor if needed"]
+  },
+  {
+    "code": "P0102",
+    "make": "Generic",
+    "meaning": "Mass or Volume Air Flow 'A' Circuit Low Input",
+    "possible_causes": ["Faulty MAF sensor", "Wiring short to ground", "Intake obstruction", "Faulty PCM"],
+    "troubleshooting_steps": ["Check MAF wiring for shorts", "Inspect intake path", "Test/replace MAF sensor", "Check PCM"]
+  },
+  {
+    "code": "P0103",
+    "make": "Generic",
+    "meaning": "Mass or Volume Air Flow 'A' Circuit High Input",
+    "possible_causes": ["Faulty MAF sensor", "Wiring short to power", "Faulty PCM"],
+    "troubleshooting_steps": ["Check MAF wiring for shorts", "Test/replace MAF sensor", "Check PCM"]
+  },
+  {
+    "code": "P0106",
+    "make": "Generic",
+    "meaning": "Manifold Absolute Pressure (MAP) Sensor Circuit Range/Performance Problem",
+    "possible_causes": ["Faulty MAP sensor", "Vacuum leak", "Wiring issue", "Clogged catalytic converter"],
+    "troubleshooting_steps": ["Check MAP sensor vacuum hose", "Check wiring to MAP sensor", "Test MAP sensor voltage", "Inspect exhaust system"]
+  },
+  {
+    "code": "P0107",
+    "make": "Generic",
+    "meaning": "Manifold Absolute Pressure/Barometric Pressure Circuit Low Input",
+    "possible_causes": ["Faulty MAP sensor", "Wiring short to ground", "Poor connection", "Faulty PCM"],
+    "troubleshooting_steps": ["Check MAP wiring for shorts", "Inspect connector", "Test/replace MAP sensor", "Check PCM"]
+  },
+  {
+    "code": "P0108",
+    "make": "Generic",
+    "meaning": "Manifold Absolute Pressure/Barometric Pressure Circuit High Input",
+    "possible_causes": ["Faulty MAP sensor", "Wiring short to power", "Poor connection", "Faulty PCM"],
+    "troubleshooting_steps": ["Check MAP wiring for shorts", "Inspect connector", "Test/replace MAP sensor", "Check PCM"]
+  },
+  {
+    "code": "P0110",
+    "make": "Generic",
+    "meaning": "Intake Air Temperature Sensor 1 Circuit",
+    "possible_causes": ["Faulty IAT sensor", "Wiring issue", "Poor connection", "Faulty PCM"],
+    "troubleshooting_steps": ["Check IAT wiring", "Inspect connector", "Test/replace IAT sensor", "Check PCM"]
+  },
+  {
+    "code": "P0113",
+    "make": "Generic",
+    "meaning": "Intake Air Temperature (IAT) Sensor 1 Circuit High Input",
+    "possible_causes": ["Faulty IAT sensor", "Open circuit in signal wire", "Poor connection", "Faulty PCM"],
+    "troubleshooting_steps": ["Check IAT wiring for open", "Inspect connector", "Test/replace IAT sensor", "Check PCM"]
+  },
+  {
+    "code": "P0115",
+    "make": "Generic",
+    "meaning": "Engine Coolant Temperature Sensor 1 Circuit",
+    "possible_causes": ["Faulty ECT sensor", "Wiring issue", "Poor connection", "Faulty PCM"],
+    "troubleshooting_steps": ["Check ECT wiring", "Inspect connector", "Test/replace ECT sensor", "Check PCM"]
+  },
+  {
+    "code": "P0118",
+    "make": "Generic",
+    "meaning": "Engine Coolant Temperature (ECT) Sensor 1 Circuit High Input",
+    "possible_causes": ["Faulty ECT sensor", "Open circuit in signal wire", "Poor connection", "Faulty PCM"],
+    "troubleshooting_steps": ["Check ECT wiring for open", "Inspect connector", "Test/replace ECT sensor", "Check PCM"]
+  },
+  {
+    "code": "P0121",
+    "make": "Generic",
+    "meaning": "Throttle/Pedal Position Sensor/Switch 'A' Circuit Range/Performance",
+    "possible_causes": ["Dirty throttle body", "Faulty TPS", "Wiring issue", "Faulty PCM"],
+    "troubleshooting_steps": ["Clean throttle body", "Check TPS wiring", "Test/replace TPS", "Check PCM"]
+  },
+  {
+    "code": "P0122",
+    "make": "Generic",
+    "meaning": "Throttle/Pedal Position Sensor/Switch 'A' Circuit Low Input",
+    "possible_causes": ["Faulty TPS", "Short to ground in signal circuit", "Poor connection", "Faulty PCM"],
+    "troubleshooting_steps": ["Check TPS wiring for shorts", "Inspect connector", "Test/replace TPS", "Check PCM"]
+  },
+  {
+    "code": "P0123",
+    "make": "Generic",
+    "meaning": "Throttle/Pedal Position Sensor/Switch 'A' Circuit High Input",
+    "possible_causes": ["Faulty TPS", "Short to power in signal circuit", "Poor connection", "Faulty PCM"],
+    "troubleshooting_steps": ["Check TPS wiring for shorts", "Inspect connector", "Test/replace TPS", "Check PCM"]
+  },
+  {
+    "code": "P0125",
+    "make": "Generic",
+    "meaning": "Insufficient Coolant Temperature for Closed Loop Fuel Control",
+    "possible_causes": ["Thermostat stuck open", "Low coolant level", "Faulty ECT sensor"],
+    "troubleshooting_steps": ["Check coolant level", "Test thermostat operation", "Test ECT sensor"]
+  },
+  {
+    "code": "P0128",
+    "make": "Generic",
+    "meaning": "Coolant Thermostat (Coolant Temp Below Regulating Temp)",
+    "possible_causes": ["Thermostat stuck open", "Low coolant level", "Faulty ECT sensor"],
+    "troubleshooting_steps": ["Check coolant level", "Replace thermostat", "Test ECT sensor"]
+  },
+  {
+    "code": "P0130",
+    "make": "Generic",
+    "meaning": "O2 Sensor Circuit (Bank 1 Sensor 1)",
+    "possible_causes": ["Faulty O2 sensor", "Wiring issue", "Exhaust leak", "Faulty PCM"],
+    "troubleshooting_steps": ["Check O2 sensor wiring", "Inspect exhaust for leaks", "Test/replace O2 sensor", "Check PCM"]
+  },
+  {
+    "code": "P0131",
+    "make": "Generic",
+    "meaning": "O2 Sensor Circuit Low Voltage (Bank 1 Sensor 1)",
+    "possible_causes": ["Faulty O2 sensor", "Vacuum leak", "Low fuel pressure", "Wiring short to ground"],
+    "troubleshooting_steps": ["Check for vacuum leaks", "Check fuel pressure", "Check O2 sensor wiring", "Replace O2 sensor"]
+  },
+  {
+    "code": "P0132",
+    "make": "Generic",
+    "meaning": "O2 Sensor Circuit High Voltage (Bank 1 Sensor 1)",
+    "possible_causes": ["Faulty O2 sensor", "Rich fuel condition", "Wiring short to power", "Leaking fuel injector"],
+    "troubleshooting_steps": ["Check fuel pressure regulator", "Check for leaking injectors", "Check O2 sensor wiring", "Replace O2 sensor"]
+  },
+  {
+    "code": "P0133",
+    "make": "Generic",
+    "meaning": "O2 Sensor Circuit Slow Response (Bank 1 Sensor 1)",
+    "possible_causes": ["Aging/contaminated O2 sensor", "Exhaust leak", "Wiring issue"],
+    "troubleshooting_steps": ["Inspect exhaust for leaks", "Check O2 sensor wiring", "Replace O2 sensor"]
+  },
+  {
+    "code": "P0135",
+    "make": "Generic",
+    "meaning": "O2 Sensor Heater Circuit (Bank 1 Sensor 1)",
+    "possible_causes": ["Faulty O2 sensor heater", "Blown fuse", "Wiring issue", "Faulty PCM"],
+    "troubleshooting_steps": ["Check heater fuse", "Test heater resistance", "Check wiring", "Replace O2 sensor"]
+  },
+  {
+    "code": "P0136",
+    "make": "Generic",
+    "meaning": "O2 Sensor Circuit (Bank 1 Sensor 2)",
+    "possible_causes": ["Faulty O2 sensor", "Wiring issue", "Exhaust leak after converter", "Faulty PCM"],
+    "troubleshooting_steps": ["Check wiring", "Inspect exhaust", "Test/replace O2 sensor", "Check PCM"]
+  },
+  {
+    "code": "P0137",
+    "make": "Generic",
+    "meaning": "O2 Sensor Circuit Low Voltage (Bank 1 Sensor 2)",
+    "possible_causes": ["Faulty O2 sensor", "Exhaust leak", "Wiring short to ground"],
+    "troubleshooting_steps": ["Inspect exhaust", "Check wiring", "Replace O2 sensor"]
+  },
+  {
+    "code": "P0138",
+    "make": "Generic",
+    "meaning": "O2 Sensor Circuit High Voltage (Bank 1 Sensor 2)",
+    "possible_causes": ["Faulty O2 sensor", "Wiring short to power", "Rich condition before sensor"],
+    "troubleshooting_steps": ["Check wiring", "Address rich condition causes", "Replace O2 sensor"]
+  },
+  {
+    "code": "P0141",
+    "make": "Generic",
+    "meaning": "O2 Sensor Heater Circuit (Bank 1 Sensor 2)",
+    "possible_causes": ["Faulty O2 sensor heater", "Blown fuse", "Wiring issue", "Faulty PCM"],
+    "troubleshooting_steps": ["Check heater fuse", "Test heater resistance", "Check wiring", "Replace O2 sensor"]
+  },
+  {
+    "code": "P0150",
+    "make": "Generic",
+    "meaning": "O2 Sensor Circuit (Bank 2 Sensor 1)",
+    "possible_causes": ["Faulty O2 sensor", "Wiring issue", "Exhaust leak", "Faulty PCM"],
+    "troubleshooting_steps": ["Check wiring", "Inspect exhaust", "Test/replace O2 sensor", "Check PCM"]
+  },
+  {
+    "code": "P0151",
+    "make": "Generic",
+    "meaning": "O2 Sensor Circuit Low Voltage (Bank 2 Sensor 1)",
+    "possible_causes": ["Faulty O2 sensor", "Vacuum leak (Bank 2)", "Low fuel pressure", "Wiring short"],
+    "troubleshooting_steps": ["Check vacuum leaks", "Check fuel pressure", "Check wiring", "Replace O2 sensor"]
+  },
+  {
+    "code": "P0152",
+    "make": "Generic",
+    "meaning": "O2 Sensor Circuit High Voltage (Bank 2 Sensor 1)",
+    "possible_causes": ["Faulty O2 sensor", "Rich fuel condition (Bank 2)", "Wiring short", "Leaking injector (Bank 2)"],
+    "troubleshooting_steps": ["Check fuel pressure", "Check injectors", "Check wiring", "Replace O2 sensor"]
+  },
+  {
+    "code": "P0153",
+    "make": "Generic",
+    "meaning": "O2 Sensor Circuit Slow Response (Bank 2 Sensor 1)",
+    "possible_causes": ["Aging/contaminated O2 sensor", "Exhaust leak", "Wiring issue"],
+    "troubleshooting_steps": ["Inspect exhaust", "Check wiring", "Replace O2 sensor"]
+  },
+  {
+    "code": "P0155",
+    "make": "Generic",
+    "meaning": "O2 Sensor Heater Circuit (Bank 2 Sensor 1)",
+    "possible_causes": ["Faulty O2 sensor heater", "Blown fuse", "Wiring issue", "Faulty PCM"],
+    "troubleshooting_steps": ["Check fuse", "Test heater resistance", "Check wiring", "Replace O2 sensor"]
+  },
+  {
+    "code": "P0156",
+    "make": "Generic",
+    "meaning": "O2 Sensor Circuit (Bank 2 Sensor 2)",
+    "possible_causes": ["Faulty O2 sensor", "Wiring issue", "Exhaust leak", "Faulty PCM"],
+    "troubleshooting_steps": ["Check wiring", "Inspect exhaust", "Test/replace O2 sensor", "Check PCM"]
+  },
+  {
+    "code": "P0161",
+    "make": "Generic",
+    "meaning": "O2 Sensor Heater Circuit (Bank 2 Sensor 2)",
+    "possible_causes": ["Faulty O2 sensor heater", "Blown fuse", "Wiring issue", "Faulty PCM"],
+    "troubleshooting_steps": ["Check fuse", "Test heater resistance", "Check wiring", "Replace O2 sensor"]
+  },
+  {
+    "code": "P0172",
+    "make": "Generic",
+    "meaning": "System Too Rich (Bank 1)",
+    "possible_causes": ["Leaking fuel injector", "Faulty fuel pressure regulator", "Faulty MAF sensor", "Faulty O2 sensor"],
+    "troubleshooting_steps": ["Check fuel trims", "Check fuel pressure", "Test injectors", "Test MAF", "Monitor O2 sensor"]
+  },
+  {
+    "code": "P0174",
+    "make": "Generic",
+    "meaning": "System Too Lean (Bank 2)",
+    "possible_causes": ["Vacuum leak (Bank 2)", "Dirty MAF sensor", "Weak fuel pump", "Faulty O2 sensor (Bank 2)", "Clogged injectors (Bank 2)"],
+    "troubleshooting_steps": ["Check fuel trims", "Check vacuum leaks", "Clean MAF", "Check fuel pressure", "Monitor O2 sensor (Bank 2)"]
+  },
+  {
+    "code": "P0175",
+    "make": "Generic",
+    "meaning": "System Too Rich (Bank 2)",
+    "possible_causes": ["Leaking injector (Bank 2)", "Faulty fuel pressure regulator", "Faulty MAF sensor", "Faulty O2 sensor (Bank 2)"],
+    "troubleshooting_steps": ["Check fuel trims", "Check fuel pressure", "Test injectors (Bank 2)", "Test MAF", "Monitor O2 sensor (Bank 2)"]
+  },
+  {
+    "code": "P0200",
+    "make": "Generic",
+    "meaning": "Injector Circuit/Open (General)",
+    "possible_causes": ["Faulty injector(s)", "Wiring issue", "Faulty PCM"],
+    "troubleshooting_steps": ["Check specific P020x codes", "Inspect injector wiring", "Test injectors", "Check PCM"]
+  }
+]
