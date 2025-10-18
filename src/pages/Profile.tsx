@@ -40,8 +40,6 @@ const Profile = () => {
 
   // Preferences State
   const [preferences, setPreferences] = useState({
-    emailNotifications: true,
-    pushNotifications: false,
     profileVisibility: true,
     commentPrivacy: false,
     language: "en",
@@ -382,32 +380,6 @@ const Profile = () => {
                     <Switch
                       checked={isDarkMode}
                       onCheckedChange={toggleDarkMode}
-                    />
-                  </div>
-
-                  <Separator />
-
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <Label className="font-rajdhani font-semibold">Email Notifications</Label>
-                      <p className="text-sm text-muted-foreground">Receive email updates</p>
-                    </div>
-                    <Switch
-                      checked={preferences.emailNotifications}
-                      onCheckedChange={() => togglePreference('emailNotifications')}
-                    />
-                  </div>
-
-                  <Separator />
-
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <Label className="font-rajdhani font-semibold">Push Notifications</Label>
-                      <p className="text-sm text-muted-foreground">Browser notifications</p>
-                    </div>
-                    <Switch
-                      checked={preferences.pushNotifications}
-                      onCheckedChange={() => togglePreference('pushNotifications')}
                     />
                   </div>
 
