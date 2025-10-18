@@ -80,7 +80,7 @@ router.post('/chat', async (req, res) => {
     // Call Groq API
     const completion = await groq.chat.completions.create({
       messages: groqMessages,
-      model: 'llama-3.1-70b-versatile', // Fast and capable model
+      model: 'llama-3.3-70b-versatile', // Latest fast and capable model
       temperature: 0.7,
       max_tokens: 1024,
       top_p: 1,
@@ -137,7 +137,7 @@ router.post('/chat/stream', async (req, res) => {
 
     const stream = await groq.chat.completions.create({
       messages: groqMessages,
-      model: 'llama-3.1-70b-versatile',
+      model: 'llama-3.3-70b-versatile',
       temperature: 0.7,
       max_tokens: 1024,
       stream: true
