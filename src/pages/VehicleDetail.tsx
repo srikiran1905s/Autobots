@@ -5,8 +5,26 @@ import Header from "@/components/Header";
 import FloatingChatbot from "@/components/FloatingChatbot";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { manufacturers, models } from "@/data/manufacturers";
-import { useState } from "react";
+import { manufacturers } from "@/data/manufacturers";
+import { useState, useEffect } from "react";
+
+interface VehicleData {
+  _id: string;
+  make: string;
+  model: string;
+  year: number;
+  type: string;
+  engine: string;
+  horsepower: string;
+  transmission: string;
+  drivetrain: string;
+  fuel_economy: string;
+  seating_capacity: number;
+  price_range: string;
+  description: string;
+  key_features: string[];
+  image_url: string;
+}
 
 interface Comment {
   id: number;
@@ -20,6 +38,8 @@ interface Comment {
 
 const VehicleDetail = () => {
   const { make, model: modelId } = useParams<{ make: string; model: string }>();
+  const [vehicle, setVehicle] = useState<VehicleData | null>(null);
+  const [loading, setLoading] = useState(true);
   const [comment, setComment] = useState("");
   const [replyTo, setReplyTo] = useState<number | null>(null);
   const [replyText, setReplyText] = useState("");
@@ -31,10 +51,49 @@ const VehicleDetail = () => {
   ]);
 
   const manufacturer = manufacturers.find(m => m.id === make);
-  const allModels = models[make as keyof typeof models] || [];
-  const vehicleModel = allModels.find(m => m.id === modelId);
 
-  if (!manufacturer || !vehicleModel) {
+  useEffect(() => {
+    const fetchVehicle = async () => {
+      if (!make || !modelId) return;
+      
+      try {
+        setLoading(true);
+        // Convert model ID back to model name (e.g., 'camry' -> 'Camry')
+        const modelName = modelId.split('-').map(word => 
+          word.charAt(0).toUpperCase() + word.slice(1)
+        ).join(' ');
+        
+        const response = await fetch(`http://localhost:5000/api/vehicles/${make}/${modelName}`);
+        const data = await response.json();
+        
+        if (data.success) {
+          setVehicle(data.data);
+        }
+      } catch (error) {
+        console.error('Error fetching vehicle:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchVehicle();
+  }, [make, modelId]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <div className="flex items-center justify-center h-96">
+          <div className="text-center">
+            <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-muted-foreground font-rajdhani">Loading vehicle details...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!manufacturer || !vehicle) {
     return <div>Vehicle not found</div>;
   }
 
@@ -93,7 +152,7 @@ const VehicleDetail = () => {
               {manufacturer.name}
             </Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-foreground">{vehicleModel.name}</span>
+            <span className="text-foreground">{vehicle.model}</span>
           </div>
 
           <motion.div
@@ -102,9 +161,9 @@ const VehicleDetail = () => {
             className="mb-12"
           >
             <h1 className="text-5xl font-rajdhani font-bold text-foreground mb-2">
-              {manufacturer.name} <span className="text-primary">{vehicleModel.name}</span> {vehicleModel.year}
+              {manufacturer.name} <span className="text-primary">{vehicle.model}</span> {vehicle.year}
             </h1>
-            <p className="text-xl text-muted-foreground font-rajdhani">{vehicleModel.trim} • {vehicleModel.bodyType}</p>
+            <p className="text-xl text-muted-foreground font-rajdhani">{vehicle.engine} • {vehicle.type}</p>
           </motion.div>
 
           {/* SECTION 1: VEHICLE SPECS PANEL */}
@@ -122,8 +181,8 @@ const VehicleDetail = () => {
             <div className="grid lg:grid-cols-2 gap-8">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-primary/20">
                 <img 
-                  src={vehicleModel.image} 
-                  alt={`${vehicleModel.name} ${vehicleModel.year}`}
+                  src={vehicle.image_url} 
+                  alt={`${vehicle.model} ${vehicle.year}`}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -135,51 +194,51 @@ const VehicleDetail = () => {
                       <Settings className="w-4 h-4 text-primary" />
                       <p className="text-sm font-rajdhani">Engine</p>
                     </div>
-                    <p className="font-roboto-mono font-bold text-foreground text-lg">{vehicleModel.specs.engine}</p>
+                    <p className="font-roboto-mono font-bold text-foreground text-lg">{vehicle.engine}</p>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Gauge className="w-4 h-4 text-primary" />
                       <p className="text-sm font-rajdhani">Capacity</p>
                     </div>
-                    <p className="font-roboto-mono font-bold text-foreground text-lg">{vehicleModel.specs.capacity}</p>
+                    <p className="font-roboto-mono font-bold text-foreground text-lg">{vehicle.engine}</p>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Zap className="w-4 h-4 text-primary" />
                       <p className="text-sm font-rajdhani">Max Power</p>
                     </div>
-                    <p className="font-roboto-mono font-bold text-foreground text-lg">{vehicleModel.specs.power}</p>
+                    <p className="font-roboto-mono font-bold text-foreground text-lg">{vehicle.horsepower}</p>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Settings className="w-4 h-4 text-primary" />
                       <p className="text-sm font-rajdhani">Transmission</p>
                     </div>
-                    <p className="font-roboto-mono font-bold text-foreground text-lg">{vehicleModel.specs.transmission}</p>
+                    <p className="font-roboto-mono font-bold text-foreground text-lg">{vehicle.transmission}</p>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Users className="w-4 h-4 text-primary" />
                       <p className="text-sm font-rajdhani">Seating</p>
                     </div>
-                    <p className="font-roboto-mono font-bold text-foreground text-lg">{vehicleModel.specs.seating}</p>
+                    <p className="font-roboto-mono font-bold text-foreground text-lg">{vehicle.seating_capacity} passengers</p>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Fuel className="w-4 h-4 text-primary" />
                       <p className="text-sm font-rajdhani">Fuel Type</p>
                     </div>
-                    <p className="font-roboto-mono font-bold text-foreground text-lg">{vehicleModel.specs.fuelType}</p>
+                    <p className="font-roboto-mono font-bold text-foreground text-lg">{vehicle.fuel_economy}</p>
                   </div>
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-border">
                   <p className="text-sm text-muted-foreground font-rajdhani mb-4 font-semibold">Key Features</p>
                   <div className="flex flex-wrap gap-3">
-                    {vehicleModel.specs.features.map((feature, idx) => (
+                    {vehicle.key_features?.map((feature, index) => (
                       <span 
-                        key={idx}
+                        key={index}
                         className="px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-rajdhani font-semibold border border-primary/30"
                       >
                         {feature}
@@ -203,7 +262,7 @@ const VehicleDetail = () => {
               Community Discussion
             </h2>
             <p className="text-muted-foreground mb-6">
-              Share your experiences, ask questions, and learn from other {vehicleModel.name} owners
+              Share your experiences, ask questions, and learn from other {vehicle.model} owners
             </p>
 
             <div className="mb-8 bg-gradient-to-br from-muted/50 to-primary/5 rounded-xl p-6 border-2 border-primary/20">

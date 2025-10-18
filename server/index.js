@@ -69,6 +69,44 @@ const obdCodeSchema = new mongoose.Schema({
 
 const OBDCode = mongoose.model('OBDCode', obdCodeSchema);
 
+// Vehicle Schema
+const vehicleSchema = new mongoose.Schema({
+  make: {
+    type: String,
+    required: true
+  },
+  model: {
+    type: String,
+    required: true
+  },
+  year: {
+    type: Number,
+    required: true
+  },
+  type: {
+    type: String,
+    required: true
+  },
+  engine: String,
+  horsepower: String,
+  transmission: String,
+  drivetrain: String,
+  fuel_economy: String,
+  seating_capacity: Number,
+  price_range: String,
+  description: String,
+  key_features: [String],
+  image_url: String,
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+vehicleSchema.index({ make: 1, model: 1, year: 1 }, { unique: true });
+
+const Vehicle = mongoose.model('Vehicle', vehicleSchema);
+
 // Routes
 
 // Health check
@@ -262,6 +300,105 @@ app.get('/api/obd/search/:query', async (req, res) => {
     res.status(500).json({ 
       success: false, 
       message: 'Error searching OBD codes' 
+    });
+  }
+});
+
+// Vehicle Routes
+
+// Get all vehicles or filter by make
+app.get('/api/vehicles', async (req, res) => {
+  try {
+    const { make } = req.query;
+    const filter = make ? { make: make } : {};
+    
+    const vehicles = await Vehicle.find(filter).sort({ make: 1, model: 1 });
+    res.json({ 
+      success: true, 
+      count: vehicles.length,
+      data: vehicles 
+    });
+  } catch (error) {
+    console.error('Error fetching vehicles:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Error fetching vehicles' 
+    });
+  }
+});
+
+// Get vehicles by make
+app.get('/api/vehicles/:make', async (req, res) => {
+  try {
+    const { make } = req.params;
+    const vehicles = await Vehicle.find({ 
+      make: new RegExp(`^${make}$`, 'i') 
+    }).sort({ model: 1 });
+    
+    if (vehicles.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: `No vehicles found for make: ${make}`
+      });
+    }
+    
+    res.json({ 
+      success: true, 
+      count: vehicles.length,
+      data: vehicles 
+    });
+  } catch (error) {
+    console.error('Error fetching vehicles by make:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Error fetching vehicles' 
+    });
+  }
+});
+
+// Get specific vehicle by make and model
+app.get('/api/vehicles/:make/:model', async (req, res) => {
+  try {
+    const { make, model } = req.params;
+    const vehicle = await Vehicle.findOne({ 
+      make: new RegExp(`^${make}$`, 'i'),
+      model: new RegExp(`^${model}$`, 'i')
+    }).sort({ year: -1 });
+    
+    if (!vehicle) {
+      return res.status(404).json({
+        success: false,
+        message: `Vehicle not found: ${make} ${model}`
+      });
+    }
+    
+    res.json({ 
+      success: true, 
+      data: vehicle 
+    });
+  } catch (error) {
+    console.error('Error fetching vehicle:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Error fetching vehicle' 
+    });
+  }
+});
+
+// Get all unique makes
+app.get('/api/vehicles/makes/list', async (req, res) => {
+  try {
+    const makes = await Vehicle.distinct('make');
+    res.json({ 
+      success: true, 
+      count: makes.length,
+      data: makes.sort()
+    });
+  } catch (error) {
+    console.error('Error fetching makes:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Error fetching makes' 
     });
   }
 });

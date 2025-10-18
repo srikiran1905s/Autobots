@@ -1,18 +1,68 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import ModelCard from "@/components/ModelCard";
 import FloatingChatbot from "@/components/FloatingChatbot";
-import { manufacturers, models } from "@/data/manufacturers";
+import { manufacturers } from "@/data/manufacturers";
+
+interface Vehicle {
+  _id: string;
+  make: string;
+  model: string;
+  year: number;
+  type: string;
+  image_url: string;
+  engine?: string;
+  horsepower?: string;
+}
 
 const ManufacturerModels = () => {
   const { make } = useParams<{ make: string }>();
+  const [vehicles, setVehicles] = useState<Vehicle[]>([]);
+  const [loading, setLoading] = useState(true);
+  
   const manufacturer = manufacturers.find(m => m.id === make);
-  const manufacturerModels = models[make as keyof typeof models] || [];
+
+  useEffect(() => {
+    const fetchVehicles = async () => {
+      if (!make) return;
+      
+      try {
+        setLoading(true);
+        const response = await fetch(`http://localhost:5000/api/vehicles/${make}`);
+        const data = await response.json();
+        
+        if (data.success) {
+          setVehicles(data.data);
+        }
+      } catch (error) {
+        console.error('Error fetching vehicles:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchVehicles();
+  }, [make]);
 
   if (!manufacturer) {
     return <div>Manufacturer not found</div>;
+  }
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <div className="flex items-center justify-center h-96">
+          <div className="text-center">
+            <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-muted-foreground font-rajdhani">Loading vehicles...</p>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -50,16 +100,16 @@ const ManufacturerModels = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {manufacturerModels.map((model, index) => (
+            {vehicles.map((vehicle, index) => (
               <ModelCard
-                key={model.id}
-                id={model.id}
+                key={vehicle._id}
+                id={vehicle.model.toLowerCase().replace(/\s+/g, '-')}
                 manufacturerId={make!}
-                name={model.name}
-                year={model.year}
-                bodyType={model.bodyType}
-                trim={model.trim}
-                image={model.image}
+                name={vehicle.model}
+                year={vehicle.year.toString()}
+                bodyType={vehicle.type}
+                trim={vehicle.engine || "Standard"}
+                image={vehicle.image_url}
                 index={index}
               />
             ))}
