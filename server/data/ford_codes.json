@@ -1,0 +1,36 @@
+[
+  {
+    "code": "P1000",
+    "make": "Ford",
+    "meaning": "OBD-II Monitor Testing Not Complete",
+    "possible_causes": [
+      "This is not a fault code. It means the vehicle's readiness monitors have not completed their self-checks.",
+      "The battery was recently disconnected.",
+      "The vehicle's computer (PCM) was recently reset or reflashed.",
+      "The vehicle has not been driven long enough to complete a full 'drive cycle'."
+    ],
+    "troubleshooting_steps": [
+      "1. No repair is needed for this code.",
+      "2. To clear the code, the vehicle must be driven through a complete 'Ford Drive Cycle' to allow all monitors to run.",
+      "3. This typically includes a mix of city driving (stop-and-go) and highway driving (steady speed).",
+      "4. The code will clear itself once all monitors have passed."
+    ]
+  },
+  {
+    "code": "P1131",
+    "make": "Ford",
+    "meaning": "Lack of HO2S11 Switch, Sensor Indicates Lean (Bank 1)",
+    "possible_causes": [
+      "Faulty upstream oxygen (O2) sensor (Bank 1, Sensor 1)",
+      "Major vacuum leak on Bank 1",
+      "Clogged fuel injector on Bank 1",
+      "Wiring issue to the O2 sensor"
+    ],
+    "troubleshooting_steps": [
+      "1. Check for vacuum leaks specific to Bank 1 (intake gaskets, vacuum lines).",
+      "2. Monitor the O2 sensor voltage. If it is stuck low (lean), it confirms the code.",
+      "3. Test the O2 sensor heater circuit.",
+      "4. If no leaks are found, replacing the upstream O2 sensor for Bank 1 is the most common fix."
+    ]
+  }
+]

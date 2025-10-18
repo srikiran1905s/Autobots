@@ -12,35 +12,69 @@ const OBDScanner = () => {
   const [diagnosisResult, setDiagnosisResult] = useState<any>(null);
   const [scanProgress, setScanProgress] = useState(0);
 
-  const handleDiagnose = () => {
+  const handleDiagnose = async () => {
     if (obdCode.trim()) {
-      // Simulate OBD diagnosis
-      const mockDiagnosis = {
-        code: obdCode.toUpperCase(),
-        meaning: getCodeMeaning(obdCode.toUpperCase()),
-        severity: getCodeSeverity(obdCode.toUpperCase()),
-        possibleCauses: [
-          "Vacuum leak in intake manifold",
-          "Faulty Mass Air Flow (MAF) sensor",
-          "Clogged or restricted fuel injectors",
-          "Weak fuel pump or low fuel pressure",
-          "Faulty oxygen sensor"
-        ],
-        troubleshootingSteps: [
-          "Inspect all vacuum hoses and intake manifold for leaks",
-          "Check MAF sensor readings with diagnostic tool",
-          "Test fuel pressure at the fuel rail",
-          "Inspect oxygen sensor wiring and connections",
-          "Clean or replace fuel injectors if necessary",
-          "Check for exhaust leaks before catalytic converter"
-        ],
-        wiringDiagram: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80"
-      };
-      setDiagnosisResult(mockDiagnosis);
+      setIsScanning(true);
+      try {
+        const response = await fetch(`http://localhost:5000/api/obd/${obdCode.trim()}`);
+        const data = await response.json();
+
+        if (data.success) {
+          const diagnosis = {
+            code: data.data.code,
+            meaning: data.data.meaning,
+            make: data.data.make,
+            severity: getCodeSeverity(data.data.code),
+            possibleCauses: data.data.possible_causes,
+            troubleshootingSteps: data.data.troubleshooting_steps,
+            wiringDiagram: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80"
+          };
+          setDiagnosisResult(diagnosis);
+        } else {
+          // Code not found in database, show fallback
+          setDiagnosisResult({
+            code: obdCode.toUpperCase(),
+            meaning: getCodeMeaning(obdCode.toUpperCase()),
+            severity: getCodeSeverity(obdCode.toUpperCase()),
+            make: "Generic",
+            possibleCauses: [
+              "Code not found in database",
+              "Please check the code and try again"
+            ],
+            troubleshootingSteps: [
+              "Verify the code is correct",
+              "Search online for more information",
+              "Consult your vehicle's service manual"
+            ],
+            wiringDiagram: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80"
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching OBD code:', error);
+        // Show error diagnosis
+        setDiagnosisResult({
+          code: obdCode.toUpperCase(),
+          meaning: "Error fetching code information",
+          severity: "moderate",
+          make: "Generic",
+          possibleCauses: [
+            "Unable to connect to server",
+            "Please check your connection and try again"
+          ],
+          troubleshootingSteps: [
+            "Ensure the backend server is running",
+            "Check your internet connection",
+            "Try again in a moment"
+          ],
+          wiringDiagram: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80"
+        });
+      } finally {
+        setIsScanning(false);
+      }
     }
   };
 
-  const handleRealTimeScan = () => {
+  const handleRealTimeScan = async () => {
     setIsScanning(true);
     setScanProgress(0);
     setDiagnosisResult(null);
@@ -49,29 +83,35 @@ const OBDScanner = () => {
       setScanProgress(prev => {
         if (prev >= 100) {
           clearInterval(interval);
-          setIsScanning(false);
-          // Simulate finding a code
-          setDiagnosisResult({
-            code: "P0171",
-            meaning: "System Too Lean (Bank 1)",
-            severity: "moderate",
-            possibleCauses: [
-              "Vacuum leak in intake manifold",
-              "Faulty Mass Air Flow (MAF) sensor",
-              "Clogged or restricted fuel injectors"
-            ],
-            troubleshootingSteps: [
-              "Inspect all vacuum hoses and intake manifold for leaks",
-              "Check MAF sensor readings with diagnostic tool",
-              "Test fuel pressure at the fuel rail"
-            ],
-            wiringDiagram: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80"
-          });
           return 100;
         }
         return prev + 10;
       });
     }, 300);
+
+    // Fetch a random code from database after scan completes
+    setTimeout(async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/obd/P0171');
+        const data = await response.json();
+
+        if (data.success) {
+          setDiagnosisResult({
+            code: data.data.code,
+            meaning: data.data.meaning,
+            make: data.data.make,
+            severity: getCodeSeverity(data.data.code),
+            possibleCauses: data.data.possible_causes,
+            troubleshootingSteps: data.data.troubleshooting_steps,
+            wiringDiagram: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80"
+          });
+        }
+      } catch (error) {
+        console.error('Error during real-time scan:', error);
+      } finally {
+        setIsScanning(false);
+      }
+    }, 3000);
   };
 
   const handleClearCodes = () => {

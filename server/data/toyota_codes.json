@@ -1,0 +1,35 @@
+[
+  {
+    "code": "P1135",
+    "make": "Toyota",
+    "meaning": "Air/Fuel Sensor Heater Circuit Malfunction (Bank 1 Sensor 1)",
+    "possible_causes": [
+      "The heating element inside the Air/Fuel (A/F) sensor has failed.",
+      "Blown fuse for the heater circuit (e.g., 'A/F HTR' fuse).",
+      "Damaged wiring or poor connection to the sensor.",
+      "Fault in the vehicle's computer (PCM), which is rare."
+    ],
+    "troubleshooting_steps": [
+      "1. Check the 'A/F HTR' fuse in the fuse box. If blown, replace it.",
+      "2. If the fuse is good, use a multimeter to check for 12V power at the sensor's connector (with the key on).",
+      "3. Check the resistance of the heater element itself at the sensor's pins. If it's 'open loop' (OL) or out of spec, the sensor is bad.",
+      "4. The most common fix is to replace the A/F Sensor (Bank 1, Sensor 1)."
+    ]
+  },
+  {
+    "code": "P1605",
+    "make": "Toyota",
+    "meaning": "Knock Control CPU Malfunction",
+    "possible_causes": [
+      "This code often indicates a problem with the internal knock sensor circuitry in the main computer (PCM).",
+      "Faulty knock sensor(s).",
+      "Damaged wiring to the knock sensors."
+    ],
+    "troubleshooting_steps": [
+      "1. This is a complex code. First, check all other codes.",
+      "2. Inspect the knock sensor wiring for any visible damage, as it's often damaged by rodents.",
+      "3. Test the knock sensors themselves according to the service manual.",
+      "4. If sensors and wiring are good, this code often points to a required PCM replacement."
+    ]
+  }
+]

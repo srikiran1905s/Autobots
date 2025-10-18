@@ -1,0 +1,52 @@
+[
+  {
+    "code": "P0171",
+    "meaning": "System Too Lean (Bank 1)",
+    "possible_causes": [
+      "Mass Air Flow (MAF) sensor is dirty or faulty",
+      "Vacuum leak downstream of the MAF sensor (e.g., cracked hose, bad intake gasket)",
+      "Clogged fuel filter or weak fuel pump",
+      "Faulty oxygen (O2) sensor"
+    ],
+    "troubleshooting_steps": [
+      "1. Inspect all vacuum and PCV hoses for leaks or cracks.",
+      "2. Clean the MAF sensor using MAF sensor cleaner. Do not touch the wires.",
+      "3. Check fuel pressure to ensure the fuel pump is working correctly.",
+      "4. Monitor the O2 sensor voltage (Bank 1, Sensor 1) to see if it's responding correctly."
+    ]
+  },
+  {
+    "code": "P0300",
+    "meaning": "Random/Multiple Cylinder Misfire Detected",
+    "possible_causes": [
+      "Worn or faulty spark plugs",
+      "Defective ignition coils or spark plug wires",
+      "Clogged or faulty fuel injectors",
+      "Major vacuum leak",
+      "Low fuel pressure"
+    ],
+    "troubleshooting_steps": [
+      "1. Check for any other accompanying misfire codes (e.g., P0301, P0302) to isolate the cylinder.",
+      "2. Inspect spark plugs for wear or damage.",
+      "3. Test ignition coils by swapping a suspected bad coil with a known good one.",
+      "4. Check fuel pressure and listen to fuel injectors for proper operation.",
+      "5. Perform a smoke test to find any hard-to-see vacuum leaks."
+    ]
+  },
+  {
+    "code": "P0420",
+    "meaning": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "possible_causes": [
+      "Failing or inefficient catalytic converter",
+      "Faulty downstream oxygen (O2) sensor (Bank 1, Sensor 2)",
+      "Exhaust leak upstream of the catalytic converter",
+      "Engine misfires or running-rich condition that damaged the converter"
+    ],
+    "troubleshooting_steps": [
+      "1. Address any other codes first, especially misfire (P030x) or fuel trim (P017x) codes.",
+      "2. Inspect the exhaust system for leaks between the engine and the catalytic converter.",
+      "3. Use a scan tool to monitor the voltage of the downstream O2 sensor. It should be relatively steady. If it's fluctuating wildly like the upstream sensor, the converter is likely bad.",
+      "4. Replace the catalytic converter as a last resort."
+    ]
+  }
+]

@@ -39,6 +39,36 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
+// OBD Code Schema
+const obdCodeSchema = new mongoose.Schema({
+  code: {
+    type: String,
+    required: true,
+    unique: true,
+    uppercase: true
+  },
+  make: {
+    type: String,
+    default: 'Generic'
+  },
+  meaning: {
+    type: String,
+    required: true
+  },
+  possible_causes: [{
+    type: String
+  }],
+  troubleshooting_steps: [{
+    type: String
+  }],
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+const OBDCode = mongoose.model('OBDCode', obdCodeSchema);
+
 // Routes
 
 // Health check
@@ -158,6 +188,80 @@ app.get('/api/users', async (req, res) => {
     res.status(500).json({ 
       success: false, 
       message: 'Error fetching users' 
+    });
+  }
+});
+
+// OBD Code Routes
+
+// Get OBD code by code
+app.get('/api/obd/:code', async (req, res) => {
+  try {
+    const { code } = req.params;
+    const obdCode = await OBDCode.findOne({ code: code.toUpperCase() });
+    
+    if (!obdCode) {
+      return res.status(404).json({ 
+        success: false, 
+        message: 'OBD code not found' 
+      });
+    }
+
+    res.json({ 
+      success: true, 
+      data: obdCode 
+    });
+  } catch (error) {
+    console.error('Error fetching OBD code:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Error fetching OBD code' 
+    });
+  }
+});
+
+// Get all OBD codes
+app.get('/api/obd', async (req, res) => {
+  try {
+    const { make } = req.query;
+    const filter = make ? { make: make } : {};
+    
+    const codes = await OBDCode.find(filter).sort({ code: 1 });
+    res.json({ 
+      success: true, 
+      count: codes.length,
+      data: codes 
+    });
+  } catch (error) {
+    console.error('Error fetching OBD codes:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Error fetching OBD codes' 
+    });
+  }
+});
+
+// Search OBD codes
+app.get('/api/obd/search/:query', async (req, res) => {
+  try {
+    const { query } = req.params;
+    const codes = await OBDCode.find({
+      $or: [
+        { code: { $regex: query, $options: 'i' } },
+        { meaning: { $regex: query, $options: 'i' } }
+      ]
+    }).limit(10);
+
+    res.json({ 
+      success: true, 
+      count: codes.length,
+      data: codes 
+    });
+  } catch (error) {
+    console.error('Error searching OBD codes:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Error searching OBD codes' 
     });
   }
 });
