@@ -28,6 +28,11 @@ const ModelCard = ({ id, manufacturerId, name, year, bodyType, trim, image, inde
               src={image} 
               alt={`${name} ${year}`}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&auto=format&fit=crop&q=80';
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent" />
             <div className="absolute bottom-4 left-4 right-4">
