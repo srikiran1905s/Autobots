@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -23,6 +23,7 @@ const Profile = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const { isDarkMode, toggleDarkMode } = useTheme();
+  const fileInputRef = useRef<HTMLInputElement>(null);
   
   // User State
   const [user, setUser] = useState({
@@ -74,6 +75,48 @@ const Profile = () => {
     });
   };
 
+  const handlePhotoClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Check file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        toast({
+          title: "File Too Large",
+          description: "Please select an image under 5MB.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Check file type
+      if (!file.type.startsWith('image/')) {
+        toast({
+          title: "Invalid File Type",
+          description: "Please select an image file.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Convert to base64 and update avatar
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64String = reader.result as string;
+        setUser(prev => ({ ...prev, avatar: base64String }));
+        setEditedUser(prev => ({ ...prev, avatar: base64String }));
+        toast({
+          title: "Photo Updated",
+          description: "Your profile photo has been updated successfully.",
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSignOut = () => {
     localStorage.removeItem('user');
     toast({
@@ -121,9 +164,20 @@ const Profile = () => {
                 <img 
                   src={user.avatar} 
                   alt="User Avatar" 
-                  className="w-32 h-32 rounded-full border-4 border-primary/30"
+                  className="w-32 h-32 rounded-full border-4 border-primary/30 object-cover"
                 />
-                <button className="absolute bottom-0 right-0 bg-primary text-primary-foreground p-2 rounded-full hover:bg-primary/90 transition-colors">
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={handlePhotoChange}
+                  className="hidden"
+                />
+                <button 
+                  onClick={handlePhotoClick}
+                  type="button"
+                  className="absolute bottom-0 right-0 bg-primary text-primary-foreground p-2 rounded-full hover:bg-primary/90 transition-colors"
+                >
                   <Camera className="w-4 h-4" />
                 </button>
               </div>
