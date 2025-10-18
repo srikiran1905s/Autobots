@@ -13,7 +13,7 @@
     "price_range": "$24,000 - $30,000",
     "description": "The Honda Civic is a compact sedan known for its sporty handling, fuel efficiency, and reliability. Available in sedan and hatchback body styles with turbocharged power.",
     "key_features": ["Honda Sensing safety suite", "Turbocharged engine", "Sporty handling", "Spacious interior", "Available manual transmission"],
-    "image_url": "https://automobiles.honda.com/-/media/Honda-Automobiles/Vehicles/2024/civic-sedan/non-VLP/jellybean/sport/sport-ext-rallye-red.png?sc_lang=en"
+    "image_url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Honda",
@@ -29,7 +29,7 @@
     "price_range": "$28,000 - $38,000",
     "description": "The Honda Accord is a midsize sedan offering refined performance, spacious interior, and advanced technology. Available with hybrid powertrain for exceptional efficiency.",
     "key_features": ["Turbocharged engines", "Available hybrid model", "Spacious cabin", "Advanced safety features", "Premium interior quality"],
-    "image_url": "https://automobiles.honda.com/-/media/Honda-Automobiles/Vehicles/2024/accord/non-VLP/jellybean/sport/sport-ext-platinum-white-pearl.png?sc_lang=en"
+    "image_url": "https://images.unsplash.com/photo-1590362891991-f776e747a588?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Honda",
@@ -45,7 +45,7 @@
     "price_range": "$30,000 - $40,000",
     "description": "The Honda CR-V is a compact SUV that combines practicality with efficiency. Available with hybrid power, it offers spacious cargo room and comfortable seating.",
     "key_features": ["Available hybrid powertrain", "Spacious cargo area", "Honda Sensing standard", "Comfortable ride", "Available AWD"],
-    "image_url": "https://automobiles.honda.com/-/media/Honda-Automobiles/Vehicles/2024/cr-v/non-VLP/jellybean/sport/sport-ext-canyon-river-blue-metallic.png?sc_lang=en"
+    "image_url": "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Honda",
@@ -61,7 +61,7 @@
     "price_range": "$40,000 - $52,000",
     "description": "The Honda Pilot is a three-row midsize SUV offering seating for up to eight passengers. It combines family-friendly features with impressive capability.",
     "key_features": ["Three-row seating", "Powerful V6 engine", "Available AWD", "Spacious interior", "Advanced safety tech"],
-    "image_url": "https://automobiles.honda.com/-/media/Honda-Automobiles/Vehicles/2024/pilot/non-VLP/jellybean/elite/elite-ext-obsidian-blue-pearl.png?sc_lang=en"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Honda",
@@ -77,7 +77,7 @@
     "price_range": "$25,000 - $32,000",
     "description": "The Honda HR-V is a subcompact SUV offering versatile cargo space and fuel efficiency. Perfect for urban driving with available all-wheel drive.",
     "key_features": ["Versatile cargo space", "Fuel-efficient", "Available AWD", "Compact size", "Modern tech features"],
-    "image_url": "https://automobiles.honda.com/-/media/Honda-Automobiles/Vehicles/2024/hr-v/non-VLP/jellybean/sport/sport-ext-canyon-river-blue-metallic.png?sc_lang=en"
+    "image_url": "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Honda",
@@ -93,7 +93,7 @@
     "price_range": "$42,000 - $50,000",
     "description": "The Honda Passport is a two-row midsize SUV built for adventure. With standard AWD and off-road capability, it's perfect for outdoor enthusiasts.",
     "key_features": ["Standard AWD", "Off-road capable", "Powerful V6", "Spacious cargo", "TrailSport trim available"],
-    "image_url": "https://automobiles.honda.com/-/media/Honda-Automobiles/Vehicles/2024/passport/non-VLP/jellybean/trailsport/trailsport-ext-sonic-gray-pearl.png?sc_lang=en"
+    "image_url": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Honda",
@@ -109,7 +109,7 @@
     "price_range": "$40,000 - $48,000",
     "description": "The Honda Ridgeline is a unique midsize pickup truck with car-like handling and innovative features like an in-bed trunk and dual-action tailgate.",
     "key_features": ["In-bed trunk", "Dual-action tailgate", "Car-like ride", "Standard AWD", "Comfortable interior"],
-    "image_url": "https://automobiles.honda.com/-/media/Honda-Automobiles/Vehicles/2024/ridgeline/non-VLP/jellybean/sport/sport-ext-obsidian-blue-pearl.png?sc_lang=en"
+    "image_url": "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Honda",
@@ -125,6 +125,6 @@
     "price_range": "$38,000 - $50,000",
     "description": "The Honda Odyssey is a premium minivan offering versatile seating configurations and family-friendly features. It combines comfort with practicality.",
     "key_features": ["Magic Slide second-row seats", "Built-in vacuum", "CabinWatch system", "Entertainment system", "Spacious interior"],
-    "image_url": "https://automobiles.honda.com/-/media/Honda-Automobiles/Vehicles/2024/odyssey/non-VLP/jellybean/elite/elite-ext-platinum-white-pearl.png?sc_lang=en"
+    "image_url": "https://images.unsplash.com/photo-1611429482390-e21d0fca534c?w=800&auto=format&fit=crop&q=80"
   }
 ]

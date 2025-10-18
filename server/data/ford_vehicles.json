@@ -13,7 +13,7 @@
     "price_range": "$36,000 - $80,000",
     "description": "The Ford F-150 is America's best-selling truck offering multiple engine options, impressive towing capacity, and advanced technology. Available in multiple trim levels including Lightning EV.",
     "key_features": ["Multiple engine options", "Up to 14,000 lbs towing", "Pro Power Onboard", "Aluminum body", "F-150 Lightning EV available"],
-    "image_url": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/f-150/2024/collections/3-2/24_frd_f15_61026_32.jpg"
+    "image_url": "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Ford",
@@ -29,7 +29,7 @@
     "price_range": "$30,000 - $75,000",
     "description": "The Ford Mustang is an iconic American muscle car offering thrilling performance and classic styling. Available with turbocharged 4-cylinder or powerful V8 engine.",
     "key_features": ["Iconic styling", "V8 power available", "Manual transmission option", "Track-ready performance", "Advanced tech"],
-    "image_url": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/mustang/2024/collections/3-2/24_frd_mst_50066_32.jpg"
+    "image_url": "https://images.unsplash.com/photo-1584345604476-8ec5f992c9c5?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Ford",
@@ -45,7 +45,7 @@
     "price_range": "$38,000 - $60,000",
     "description": "The Ford Explorer is a three-row midsize SUV offering spacious seating and powerful performance. Available with ST performance variant and hybrid option.",
     "key_features": ["Three-row seating", "Powerful EcoBoost engines", "Available hybrid", "ST performance trim", "Advanced towing capability"],
-    "image_url": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/explorer/2024/collections/3-2/24_frd_exp_61123_32.jpg"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Ford",
@@ -61,7 +61,7 @@
     "price_range": "$30,000 - $40,000",
     "description": "The Ford Escape is a compact SUV offering efficient turbocharged engines and available hybrid power. Perfect for daily driving with available AWD.",
     "key_features": ["Available hybrid", "Turbocharged engines", "Spacious cargo", "Ford Co-Pilot360", "Comfortable ride"],
-    "image_url": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/escape/2024/collections/3-2/24_frd_esc_61086_32.jpg"
+    "image_url": "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Ford",
@@ -77,7 +77,7 @@
     "price_range": "$35,000 - $75,000",
     "description": "The Ford Bronco is an off-road SUV built for adventure. With removable doors and roof, serious 4x4 capability, and rugged styling, it's perfect for trail enthusiasts.",
     "key_features": ["Removable doors and roof", "Serious off-road capability", "Manual transmission option", "GOAT modes", "Sasquatch package available"],
-    "image_url": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/bronco/2024/collections/3-2/24_frd_bco_64030_32.jpg"
+    "image_url": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Ford",
@@ -93,7 +93,7 @@
     "price_range": "$30,000 - $40,000",
     "description": "The Ford Bronco Sport is a compact SUV with off-road capability and rugged styling. Smaller than the Bronco, it offers versatility for adventure and daily driving.",
     "key_features": ["Off-road capable", "GOAT modes", "Available Badlands trim", "Spacious cargo", "Modern tech"],
-    "image_url": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/broncosport/2024/collections/3-2/24_frd_bcs_61153_32.jpg"
+    "image_url": "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Ford",
@@ -109,7 +109,7 @@
     "price_range": "$55,000 - $80,000",
     "description": "The Ford Expedition is a full-size SUV offering three-row seating and impressive towing capacity. With luxurious features and powerful performance, it's ideal for large families.",
     "key_features": ["Three-row seating", "Up to 9,300 lbs towing", "Powerful EcoBoost V6", "Spacious interior", "Advanced tech"],
-    "image_url": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/expedition/2024/collections/3-2/24_frd_epd_61178_32.jpg"
+    "image_url": "https://images.unsplash.com/photo-1609595373918-dbaa6205a507?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Ford",
@@ -125,7 +125,7 @@
     "price_range": "$25,000 - $38,000",
     "description": "The Ford Maverick is a compact pickup truck with standard hybrid power and impressive fuel economy. Perfect for those who need truck capability without the size.",
     "key_features": ["Standard hybrid powertrain", "Outstanding fuel economy", "Compact size", "4,000 lbs towing", "Affordable price"],
-    "image_url": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/maverick/2024/collections/3-2/24_frd_mav_61136_32.jpg"
+    "image_url": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Ford",
@@ -141,7 +141,7 @@
     "price_range": "$33,000 - $45,000",
     "description": "The Ford Ranger is a midsize pickup truck offering rugged capability and modern technology. Redesigned with improved performance and features.",
     "key_features": ["Turbocharged EcoBoost", "Off-road capability", "Modern interior", "7,500 lbs towing", "Raptor trim available"],
-    "image_url": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/ranger/2024/collections/3-2/24_frd_rgr_64113_32.jpg"
+    "image_url": "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Ford",
@@ -157,6 +157,6 @@
     "price_range": "$43,000 - $65,000",
     "description": "The Ford Mustang Mach-E is an all-electric SUV combining Mustang performance with SUV practicality. Offers up to 312 miles of range and thrilling acceleration.",
     "key_features": ["All-electric powertrain", "Up to 312 miles range", "GT performance variant", "Modern tech features", "Mustang-inspired styling"],
-    "image_url": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/mustangmache/2024/collections/3-2/24_frd_mme_64008_32.jpg"
+    "image_url": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&auto=format&fit=crop&q=80"
   }
 ]

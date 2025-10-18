@@ -13,7 +13,7 @@
     "price_range": "$28,000 - $38,000",
     "description": "The Toyota Camry is a midsize sedan known for its reliability, comfort, and fuel efficiency. Available with hybrid and V6 options, it offers a smooth ride and spacious interior.",
     "key_features": ["Toyota Safety Sense 3.0", "Apple CarPlay/Android Auto", "Available AWD", "Spacious trunk", "Comfortable ride"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2024/camry/xse/4t3l11mk9su000781/1g3/0100.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -29,7 +29,7 @@
     "price_range": "$22,000 - $28,000",
     "description": "The Toyota Corolla is a compact sedan that combines affordability with reliability. Known for excellent fuel economy and low maintenance costs, it's perfect for daily commuting.",
     "key_features": ["Toyota Safety Sense 2.0", "LED headlights", "Available hybrid model", "Low ownership costs", "Excellent resale value"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2024/corolla/se/4t1k61ak7su000160/1g3/0040.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1623869675781-80f9c53b8e08?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -45,7 +45,7 @@
     "price_range": "$30,000 - $42,000",
     "description": "The Toyota RAV4 is a compact SUV that offers versatility, safety, and efficiency. Available in hybrid and plug-in hybrid variants, it's ideal for families and adventure seekers.",
     "key_features": ["Available hybrid powertrain", "Standard AWD", "Spacious cargo area", "Off-road capability", "Advanced safety features"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2024/rav4/xle/4t3d1rfv0ru001660/089/0218.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -61,7 +61,7 @@
     "price_range": "$38,000 - $52,000",
     "description": "The Toyota Highlander is a three-row midsize SUV offering spacious seating for up to eight passengers. It combines comfort, reliability, and advanced safety features.",
     "key_features": ["Three-row seating", "Available hybrid model", "Premium interior", "Toyota Safety Sense 2.5+", "Comfortable ride"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2024/highlander/xle/5tdjzrfh8rs146830/089/0218.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1611859266238-4b98091d9d9b?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -77,7 +77,7 @@
     "price_range": "$30,000 - $48,000",
     "description": "The Toyota Tacoma is a midsize pickup truck known for its off-road capability and durability. Available in multiple configurations, it's perfect for work and play.",
     "key_features": ["Off-road capability", "TRD Pro available", "Manual transmission option", "Durable construction", "High resale value"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2024/tacoma/sr5/3tyrx5cn7rt002773/040/0218.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -93,7 +93,7 @@
     "price_range": "$40,000 - $70,000",
     "description": "The Toyota Tundra is a full-size pickup truck with impressive towing capacity and hybrid efficiency. Redesigned with modern technology and powerful performance.",
     "key_features": ["Hybrid powertrain", "Up to 12,000 lbs towing", "Spacious crew cab", "Advanced tech features", "Rugged capability"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2024/tundra/1794/5tfdy5f19rx840321/070/0218.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -109,7 +109,7 @@
     "price_range": "$42,000 - $55,000",
     "description": "The Toyota 4Runner is a body-on-frame SUV built for serious off-roading. With rugged construction and proven reliability, it's perfect for adventurous families.",
     "key_features": ["Body-on-frame construction", "Serious off-road capability", "Third-row seating", "TRD Pro available", "Proven durability"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2024/4runner/sr5/jtebu5jr7r5823966/040/0218.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -125,7 +125,7 @@
     "price_range": "$28,000 - $35,000",
     "description": "The Toyota Prius is the iconic hybrid sedan offering exceptional fuel economy and eco-friendly performance. Redesigned with modern styling and advanced technology.",
     "key_features": ["Outstanding fuel economy", "Hybrid powertrain", "Modern design", "Advanced safety features", "Plug-in option available"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2024/prius/le/jtdkarfp4r3230361/3u5/0040.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1617469767053-d3b523a0b982?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -141,7 +141,7 @@
     "price_range": "$38,000 - $52,000",
     "description": "The Toyota Sienna is the only hybrid minivan on the market. It offers spacious seating for eight, excellent fuel economy, and family-friendly features.",
     "key_features": ["Standard hybrid powertrain", "Available AWD", "Eight-passenger seating", "Excellent fuel economy", "Family-friendly features"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2024/sienna/xle/5tdkrkec8rs179650/1g3/0040.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1611429482390-e21d0fca534c?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -157,7 +157,7 @@
     "price_range": "$45,000 - $58,000",
     "description": "The Toyota Supra is a legendary sports car offering thrilling performance and precise handling. Co-developed with BMW, it features a turbocharged engine and rear-wheel drive.",
     "key_features": ["Turbocharged engines", "Rear-wheel drive", "Sport-tuned suspension", "Driver-focused cockpit", "Iconic styling"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2024/supra/3.0/jm1j53c50r0200125/2t3/0040.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1597210159614-966c9f632c89?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -173,7 +173,7 @@
     "price_range": "$30,000 - $35,000",
     "description": "The Toyota GR86 is an affordable sports car with excellent handling and driving dynamics. Perfect for enthusiasts who want pure driving pleasure.",
     "key_features": ["Rear-wheel drive", "Manual transmission option", "Lightweight design", "Excellent handling", "Affordable performance"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2024/gr86/premium/jf1zcac19r9700128/61k/0040.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1552519507-cf0d1a27f6b4?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -189,7 +189,7 @@
     "price_range": "$60,000 - $80,000",
     "description": "The Toyota Sequoia is a full-size SUV offering three-row seating and impressive towing capability. Redesigned with hybrid power and modern technology.",
     "key_features": ["Hybrid powertrain", "Three-row seating", "Up to 9,000 lbs towing", "Spacious interior", "Advanced safety tech"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2024/sequoia/platinum/7svaaacaxrx000311/089/0218.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1609595373918-dbaa6205a507?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -205,7 +205,7 @@
     "price_range": "$42,000 - $52,000",
     "description": "The Toyota Crown is a premium sedan combining hybrid efficiency with luxury features. It offers standard AWD and a unique fastback design.",
     "key_features": ["Hybrid powertrain", "Standard AWD", "Premium interior", "Unique styling", "Advanced technology"],
-    "image_url": "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&q=80"
+    "image_url": "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -221,7 +221,7 @@
     "price_range": "$35,000 - $43,000",
     "description": "The Toyota Venza is a stylish midsize SUV with standard hybrid power and AWD. It offers a premium interior and excellent fuel economy.",
     "key_features": ["Standard hybrid and AWD", "Premium interior", "Excellent fuel economy", "Star Gaze panoramic roof", "Quiet cabin"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/venza/xle/ztvabbec4pd002363/089/0218.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Toyota",
@@ -237,6 +237,6 @@
     "price_range": "$43,000 - $50,000",
     "description": "The Toyota bZ4X is Toyota's first mass-market electric SUV. It offers up to 252 miles of range, standard safety features, and spacious interior.",
     "key_features": ["All-electric powertrain", "Up to 252 miles range", "Available AWD", "Toyota Safety Sense", "Modern tech features"],
-    "image_url": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/bz4x/limited/jtmeb3ev5pd015840/089/1500.png?fm=webp&w=930&q=90"
+    "image_url": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&auto=format&fit=crop&q=80"
   }
 ]
