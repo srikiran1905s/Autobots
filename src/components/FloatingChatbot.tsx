@@ -164,7 +164,7 @@ const FloatingChatbot = ({ context }: FloatingChatbotProps) => {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="fixed bottom-24 right-6 w-96 max-w-[calc(100vw-3rem)] bg-card border-2 border-primary/30 rounded-2xl shadow-2xl overflow-hidden z-50"
+            className="fixed bottom-24 right-6 w-[480px] max-w-[calc(100vw-3rem)] bg-card border-2 border-primary/30 rounded-2xl shadow-2xl overflow-hidden z-50"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-secondary to-secondary/80 p-4 flex items-center justify-between border-b border-primary/20">
@@ -223,7 +223,7 @@ const FloatingChatbot = ({ context }: FloatingChatbotProps) => {
             )}
 
             {/* Messages */}
-            <div className="h-96 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-background to-secondary/20">
+            <div className="h-[450px] overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-background to-secondary/20">
               {messages.map((msg, idx) => (
                 <motion.div
                   key={idx}
@@ -284,33 +284,40 @@ const FloatingChatbot = ({ context }: FloatingChatbotProps) => {
             </div>
 
             {/* Input Area */}
-            <div className="p-4 border-t border-border bg-card/50 backdrop-blur-sm">
-              <div className="flex gap-2 items-end">
+            <div className="p-4 border-t border-border bg-gradient-to-r from-card/50 to-secondary/30 backdrop-blur-sm">
+              <div className="flex gap-3 items-end">
                 <Textarea 
                   ref={textareaRef}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyPress}
-                  placeholder="Ask about diagnostics, repairs, or maintenance..."
-                  className="flex-1 min-h-[44px] max-h-32 resize-none bg-background border-primary/20 focus:border-primary transition-colors"
+                  placeholder="Ask about repairs, diagnostics, or codes..."
+                  className="flex-1 min-h-[48px] max-h-32 resize-none bg-background/95 border-primary/20 focus:border-primary transition-all duration-300 focus:ring-2 focus:ring-primary/20 rounded-xl px-4 py-3 text-sm placeholder:text-muted-foreground/60 font-rajdhani scrollbar-hide"
                   rows={1}
                   disabled={isLoading}
+                  style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 />
                 <Button 
                   onClick={handleSend}
                   disabled={isLoading || !input.trim()}
-                  className="bg-primary hover:bg-primary/90 disabled:opacity-50 h-11 px-4"
+                  className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 disabled:opacity-50 h-12 w-12 rounded-xl shadow-lg disabled:shadow-none transition-all duration-300"
+                  size="icon"
                 >
                   {isLoading ? (
-                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <Loader2 className="w-5 h-5 animate-spin" />
                   ) : (
-                    <Send className="w-4 h-4" />
+                    <Send className="w-5 h-5" />
                   )}
                 </Button>
               </div>
-              <p className="text-xs text-muted-foreground mt-2 text-center">
-                Press Enter to send • Shift+Enter for new line
-              </p>
+              <div className="flex items-center justify-between mt-3 px-1">
+                <p className="text-xs text-muted-foreground/80 font-rajdhani">
+                  💡 Your AI automotive expert
+                </p>
+                <p className="text-xs text-muted-foreground/60 font-rajdhani">
+                  Enter to send • Shift+Enter new line
+                </p>
+              </div>
             </div>
           </motion.div>
         )}
