@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
-  User, Mail, Phone, MapPin, Car, Edit, Trash2, Plus, 
+  User, Mail, Phone, MapPin, Edit, Trash2,
   Shield, Key, Bell, Globe, Eye, LogOut, HelpCircle, 
   MessageSquare, ThumbsUp, Bookmark, Settings, Camera,
   ChevronRight, CheckCircle2, XCircle, Clock, Lock
@@ -49,11 +49,6 @@ const Profile = () => {
   });
 
   // Mock Data
-  const vehicles = [
-    { id: 1, make: "Toyota", model: "Camry", year: 2020, vin: "1HGBH41JXMN109186" },
-    { id: 2, make: "Honda", model: "Civic", year: 2019, vin: "2HGFC2F59KH542891" }
-  ];
-
   const diagnosticHistory = [
     { id: 1, code: "P0171", date: "2025-01-15 10:30 AM", resolved: true, vehicle: "Toyota Camry" },
     { id: 2, code: "P0300", date: "2025-01-10 02:15 PM", resolved: false, vehicle: "Honda Civic" },
@@ -79,13 +74,6 @@ const Profile = () => {
     toast({
       title: "Profile Updated",
       description: "Your profile has been successfully updated.",
-    });
-  };
-
-  const handleDeleteVehicle = (id: number) => {
-    toast({
-      title: "Vehicle Removed",
-      description: "Vehicle has been removed from your profile.",
     });
   };
 
@@ -249,57 +237,6 @@ const Profile = () => {
             {/* Left Column */}
             <div className="lg:col-span-2 space-y-6">
               
-              {/* My Vehicles */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="bg-card rounded-2xl p-6 border border-border"
-              >
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-2xl font-rajdhani font-bold text-foreground flex items-center gap-2">
-                    <Car className="w-6 h-6 text-primary" />
-                    My Vehicles
-                  </h2>
-                  <Button className="bg-primary">
-                    <Plus className="w-4 h-4 mr-2" />
-                    Add Vehicle
-                  </Button>
-                </div>
-
-                <div className="space-y-3">
-                  {vehicles.map((vehicle) => (
-                    <div
-                      key={vehicle.id}
-                      className="bg-background rounded-lg p-4 border border-border hover:border-primary/50 transition-colors"
-                    >
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <h3 className="font-rajdhani font-bold text-lg text-foreground">
-                            {vehicle.year} {vehicle.make} {vehicle.model}
-                          </h3>
-                          <p className="text-sm text-muted-foreground font-roboto-mono">
-                            VIN: {vehicle.vin}
-                          </p>
-                        </div>
-                        <div className="flex gap-2">
-                          <Button size="sm" variant="outline">
-                            <Edit className="w-4 h-4" />
-                          </Button>
-                          <Button 
-                            size="sm" 
-                            variant="outline"
-                            onClick={() => handleDeleteVehicle(vehicle.id)}
-                          >
-                            <Trash2 className="w-4 h-4" />
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
               {/* OBD Diagnostic History */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
