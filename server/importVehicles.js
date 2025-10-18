@@ -87,8 +87,57 @@ async function importData() {
       fs.readFileSync(path.join(__dirname, 'data', 'ford_vehicles.json'), 'utf8')
     );
 
+    const bmwVehicles = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'data', 'bmw_vehicles.json'), 'utf8')
+    );
+
+    const mercedesVehicles = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'data', 'mercedes_vehicles.json'), 'utf8')
+    );
+
+    const audiVehicles = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'data', 'audi_vehicles.json'), 'utf8')
+    );
+
+    const nissanVehicles = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'data', 'nissan_vehicles.json'), 'utf8')
+    );
+
+    const chevroletVehicles = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'data', 'chevrolet_vehicles.json'), 'utf8')
+    );
+
+    const volkswagenVehicles = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'data', 'volkswagen_vehicles.json'), 'utf8')
+    );
+
+    const hyundaiVehicles = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'data', 'hyundai_vehicles.json'), 'utf8')
+    );
+
+    const mazdaVehicles = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'data', 'mazda_vehicles.json'), 'utf8')
+    );
+
+    const jeepVehicles = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'data', 'jeep_vehicles.json'), 'utf8')
+    );
+
     // Combine all vehicles
-    const allVehicles = [...toyotaVehicles, ...hondaVehicles, ...fordVehicles];
+    const allVehicles = [
+      ...toyotaVehicles,
+      ...hondaVehicles,
+      ...fordVehicles,
+      ...bmwVehicles,
+      ...mercedesVehicles,
+      ...audiVehicles,
+      ...nissanVehicles,
+      ...chevroletVehicles,
+      ...volkswagenVehicles,
+      ...hyundaiVehicles,
+      ...mazdaVehicles,
+      ...jeepVehicles
+    ];
 
     console.log(`📥 Importing ${allVehicles.length} vehicles...`);
 
@@ -98,27 +147,30 @@ async function importData() {
 
     // Display summary
     console.log('\n📊 Import Summary:');
-    console.log(`   Toyota vehicles: ${toyotaVehicles.length}`);
-    console.log(`   Honda vehicles: ${hondaVehicles.length}`);
-    console.log(`   Ford vehicles: ${fordVehicles.length}`);
+    console.log(`   Toyota: ${toyotaVehicles.length}`);
+    console.log(`   Honda: ${hondaVehicles.length}`);
+    console.log(`   Ford: ${fordVehicles.length}`);
+    console.log(`   BMW: ${bmwVehicles.length}`);
+    console.log(`   Mercedes-Benz: ${mercedesVehicles.length}`);
+    console.log(`   Audi: ${audiVehicles.length}`);
+    console.log(`   Nissan: ${nissanVehicles.length}`);
+    console.log(`   Chevrolet: ${chevroletVehicles.length}`);
+    console.log(`   Volkswagen: ${volkswagenVehicles.length}`);
+    console.log(`   Hyundai: ${hyundaiVehicles.length}`);
+    console.log(`   Mazda: ${mazdaVehicles.length}`);
+    console.log(`   Jeep: ${jeepVehicles.length}`);
     console.log(`   Total: ${result.length}`);
 
     // Display all imported vehicles by make
     console.log('\n📋 Imported Vehicles:');
     
-    console.log('\n🚗 Toyota:');
-    result.filter(v => v.make === 'Toyota').forEach(v => {
-      console.log(`   ${v.year} ${v.model} - ${v.type}`);
-    });
+    const makes = ['Toyota', 'Honda', 'Ford', 'BMW', 'Mercedes-Benz', 'Audi', 'Nissan', 'Chevrolet', 'Volkswagen', 'Hyundai', 'Mazda', 'Jeep'];
     
-    console.log('\n🚗 Honda:');
-    result.filter(v => v.make === 'Honda').forEach(v => {
-      console.log(`   ${v.year} ${v.model} - ${v.type}`);
-    });
-    
-    console.log('\n🚗 Ford:');
-    result.filter(v => v.make === 'Ford').forEach(v => {
-      console.log(`   ${v.year} ${v.model} - ${v.type}`);
+    makes.forEach(make => {
+      console.log(`\n🚗 ${make}:`);
+      result.filter(v => v.make === make).forEach(v => {
+        console.log(`   ${v.year} ${v.model} - ${v.type}`);
+      });
     });
 
     mongoose.connection.close();
