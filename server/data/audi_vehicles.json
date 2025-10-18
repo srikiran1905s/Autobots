@@ -13,7 +13,7 @@
     "price_range": "$42,000 - $51,000",
     "description": "The Audi A4 is a compact luxury sedan known for its refined interior, Quattro all-wheel drive, and advanced technology features.",
     "key_features": ["Quattro AWD", "MMI Touch Display", "Virtual Cockpit", "LED Headlights", "Bang & Olufsen Audio"],
-    "image_url": "https://images.unsplash.com/photo-1610768764270-790fbec18178?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Audi",
@@ -29,7 +29,7 @@
     "price_range": "$47,000 - $56,000",
     "description": "The Audi Q5 is a compact luxury SUV offering premium cabin, advanced tech, and Quattro all-wheel drive capability.",
     "key_features": ["Quattro AWD", "Panoramic Sunroof", "Virtual Cockpit Plus", "Wireless CarPlay", "Adaptive Cruise Control"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Audi",
@@ -45,7 +45,7 @@
     "price_range": "$107,000 - $147,000",
     "description": "The Audi e-tron GT is a high-performance electric gran turismo combining stunning design with electrifying performance and luxury.",
     "key_features": ["Up to 238 miles range", "22kW AC Charging", "Matrix LED Headlights", "Sport Seats Plus", "Adaptive Air Suspension"],
-    "image_url": "https://images.unsplash.com/photo-1610768764270-790fbec18178?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Audi",
@@ -61,7 +61,7 @@
     "price_range": "$60,000 - $75,000",
     "description": "The Audi Q7 is a three-row luxury SUV offering spacious interior, advanced tech, and refined driving dynamics.",
     "key_features": ["Three-Row Seating", "Quattro AWD", "Virtual Cockpit", "Adaptive Air Suspension", "Matrix LED Lights"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Audi",
@@ -77,7 +77,7 @@
     "price_range": "$60,000 - $70,000",
     "description": "The Audi A6 is a midsize luxury sedan offering cutting-edge technology, refined performance, and elegant design.",
     "key_features": ["MMI Touch Response", "Virtual Cockpit Plus", "Quattro AWD", "Predictive Suspension", "Premium Plus Package"],
-    "image_url": "https://images.unsplash.com/photo-1610768764270-790fbec18178?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Audi",
@@ -93,7 +93,7 @@
     "price_range": "$39,000 - $47,000",
     "description": "The Audi Q3 is a subcompact luxury SUV offering premium features in a compact package with Audi's signature Quattro AWD.",
     "key_features": ["Quattro AWD", "MMI System", "LED Headlights", "Panoramic Sunroof", "Sport Suspension"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Audi",
@@ -109,7 +109,7 @@
     "price_range": "$120,000 - $130,000",
     "description": "The Audi RS6 Avant is a high-performance wagon combining supercar performance with everyday practicality. A true enthusiast's dream.",
     "key_features": ["Sport Differential", "Dynamic Ride Control", "RS Sport Exhaust", "Carbon Fiber Trim", "Ceramic Brakes"],
-    "image_url": "https://images.unsplash.com/photo-1610768764270-790fbec18178?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Audi",
@@ -125,7 +125,7 @@
     "price_range": "$73,000 - $88,000",
     "description": "The Audi Q8 is a flagship SUV with coupe-like styling, combining luxury, technology, and performance in a stunning package.",
     "key_features": ["Dual Touchscreen Display", "HD Matrix LED Lights", "Adaptive Air Suspension", "Bang & Olufsen 3D", "Virtual Mirrors Available"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Audi",
@@ -141,6 +141,6 @@
     "price_range": "$72,000 - $82,000",
     "description": "The Audi e-tron is an all-electric SUV offering impressive range, fast charging, and Audi's legendary Quattro AWD capability.",
     "key_features": ["Up to 222 miles range", "150kW DC Fast Charging", "Virtual Mirrors", "Air Suspension", "Four-Zone Climate"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   }
 ]

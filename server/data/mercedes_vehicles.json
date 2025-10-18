@@ -13,7 +13,7 @@
     "price_range": "$45,000 - $55,000",
     "description": "The Mercedes-Benz C-Class is a compact luxury sedan offering refined styling, advanced technology, and smooth performance.",
     "key_features": ["MBUX Infotainment", "64-Color Ambient Lighting", "Burmester Audio", "Driver Assistance Package", "Wireless Charging"],
-    "image_url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mercedes-Benz",
@@ -29,7 +29,7 @@
     "price_range": "$62,000 - $78,000",
     "description": "The Mercedes-Benz E-Class represents the pinnacle of midsize luxury sedans with cutting-edge technology and exceptional comfort.",
     "key_features": ["MBUX Hyperscreen", "E-Active Body Control", "Air Balance Package", "Multibeam LED Headlights", "Executive Rear Seats"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mercedes-Benz",
@@ -45,7 +45,7 @@
     "price_range": "$62,000 - $95,000",
     "description": "The Mercedes-Benz GLE is a midsize luxury SUV combining elegance with capability. Offers three-row seating and advanced off-road features.",
     "key_features": ["4MATIC AWD", "MBUX System", "Air Suspension", "Off-Road Package", "Panoramic Sunroof"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mercedes-Benz",
@@ -61,7 +61,7 @@
     "price_range": "$48,000 - $58,000",
     "description": "The Mercedes-Benz GLC is a compact luxury SUV offering premium features, comfortable ride, and excellent build quality.",
     "key_features": ["MBUX Interface", "Hands-Free Liftgate", "Burmester Surround Sound", "Augmented Reality Navigation", "Active Parking Assist"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mercedes-Benz",
@@ -77,7 +77,7 @@
     "price_range": "$117,000 - $183,000",
     "description": "The Mercedes-Benz S-Class is the flagship luxury sedan setting the benchmark for automotive excellence with unparalleled luxury and technology.",
     "key_features": ["MBUX Hyperscreen", "E-Active Body Control", "Burmester 4D Sound", "Executive Rear Seats Plus", "Digital Light Headlamps"],
-    "image_url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mercedes-Benz",
@@ -93,7 +93,7 @@
     "price_range": "$99,000 - $162,000",
     "description": "The Mercedes-AMG GT is a high-performance sports car offering race-bred engineering with everyday usability. Pure driving excitement.",
     "key_features": ["AMG Performance Exhaust", "Race Mode", "Carbon Fiber Interior", "AMG Track Pace", "Performance Seats"],
-    "image_url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mercedes-Benz",
@@ -109,7 +109,7 @@
     "price_range": "$42,000 - $48,000",
     "description": "The Mercedes-Benz GLA is a subcompact luxury SUV combining style with efficiency. Perfect for urban environments.",
     "key_features": ["MBUX System", "LED Headlights", "Smartphone Integration", "Power Liftgate", "Ambient Lighting"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mercedes-Benz",
@@ -125,7 +125,7 @@
     "price_range": "$105,000 - $140,000",
     "description": "The Mercedes-Benz EQS is an all-electric luxury sedan representing the future of Mercedes with stunning range and advanced technology.",
     "key_features": ["Up to 453 miles range", "MBUX Hyperscreen", "HEPA Air Filtration", "Augmented Reality HUD", "Airmatic Suspension"],
-    "image_url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mercedes-Benz",
@@ -141,6 +141,6 @@
     "price_range": "$143,000 - $158,000",
     "description": "The Mercedes-Benz G-Class is an iconic luxury off-roader combining rugged capability with opulent luxury. A true automotive legend.",
     "key_features": ["Three Locking Differentials", "MBUX System", "Burmester Audio", "Adaptive Damping", "Off-Road Modes"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80"
   }
 ]

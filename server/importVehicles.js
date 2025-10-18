@@ -123,6 +123,10 @@ async function importData() {
       fs.readFileSync(path.join(__dirname, 'data', 'jeep_vehicles.json'), 'utf8')
     );
 
+    const kiaVehicles = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'data', 'kia_vehicles.json'), 'utf8')
+    );
+
     // Combine all vehicles
     const allVehicles = [
       ...toyotaVehicles,
@@ -136,7 +140,8 @@ async function importData() {
       ...volkswagenVehicles,
       ...hyundaiVehicles,
       ...mazdaVehicles,
-      ...jeepVehicles
+      ...jeepVehicles,
+      ...kiaVehicles
     ];
 
     console.log(`📥 Importing ${allVehicles.length} vehicles...`);
@@ -159,12 +164,13 @@ async function importData() {
     console.log(`   Hyundai: ${hyundaiVehicles.length}`);
     console.log(`   Mazda: ${mazdaVehicles.length}`);
     console.log(`   Jeep: ${jeepVehicles.length}`);
+    console.log(`   Kia: ${kiaVehicles.length}`);
     console.log(`   Total: ${result.length}`);
 
     // Display all imported vehicles by make
     console.log('\n📋 Imported Vehicles:');
     
-    const makes = ['Toyota', 'Honda', 'Ford', 'BMW', 'Mercedes-Benz', 'Audi', 'Nissan', 'Chevrolet', 'Volkswagen', 'Hyundai', 'Mazda', 'Jeep'];
+    const makes = ['Toyota', 'Honda', 'Ford', 'BMW', 'Mercedes-Benz', 'Audi', 'Nissan', 'Chevrolet', 'Volkswagen', 'Hyundai', 'Mazda', 'Jeep', 'Kia'];
     
     makes.forEach(make => {
       console.log(`\n🚗 ${make}:`);

@@ -13,7 +13,7 @@
     "price_range": "$27,000 - $35,000",
     "description": "The Nissan Altima is a midsize sedan offering value, efficiency, and available AWD. Features comfortable ride and modern technology.",
     "key_features": ["ProPILOT Assist", "Safety Shield 360", "Apple CarPlay/Android Auto", "Dual-Zone Climate", "Zero Gravity Seats"],
-    "image_url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Nissan",
@@ -29,7 +29,7 @@
     "price_range": "$30,000 - $40,000",
     "description": "The Nissan Rogue is a compact SUV offering spacious interior, excellent fuel economy, and advanced safety features.",
     "key_features": ["ProPILOT Assist", "Tri-Zone Climate", "Divide-N-Hide Cargo", "Panoramic Moonroof", "Bose Audio"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Nissan",
@@ -45,7 +45,7 @@
     "price_range": "$43,000 - $55,000",
     "description": "The Nissan Z is a modern sports car honoring legendary heritage with powerful twin-turbo V6 and sharp handling.",
     "key_features": ["400 HP Twin-Turbo", "Limited Slip Differential", "Performance Brakes", "Launch Control", "Sport Mode"],
-    "image_url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Nissan",
@@ -61,7 +61,7 @@
     "price_range": "$38,000 - $51,000",
     "description": "The Nissan Pathfinder is a three-row midsize SUV combining family-friendly features with rugged capability and modern tech.",
     "key_features": ["Three-Row Seating", "Intelligent 4x4", "Tow Mode", "Tri-Zone Climate", "Around View Monitor"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Nissan",
@@ -77,7 +77,7 @@
     "price_range": "$40,000 - $60,000",
     "description": "The Nissan Ariya is an all-electric SUV featuring modern design, impressive range, and advanced e-4ORCE AWD technology.",
     "key_features": ["Up to 304 miles range", "e-4ORCE AWD", "ProPILOT Assist 2.0", "Zero Gravity Seats", "130kW DC Fast Charging"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Nissan",
@@ -109,7 +109,7 @@
     "price_range": "$22,000 - $26,000",
     "description": "The Nissan Kicks is a subcompact SUV offering exceptional fuel economy, modern styling, and surprising interior space at an affordable price.",
     "key_features": ["Automatic Emergency Braking", "Rear Cross Traffic Alert", "7-inch Touchscreen", "LED Headlights", "Blind Spot Warning"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Nissan",
@@ -125,7 +125,7 @@
     "price_range": "$35,000 - $45,000",
     "description": "The Nissan Murano is a midsize SUV featuring upscale design, comfortable cabin, and smooth V6 power.",
     "key_features": ["Zero Gravity Seats", "Motion Activated Liftgate", "Dual Panoramic Moonroof", "Bose Premium Audio", "Intelligent AWD"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Nissan",
@@ -141,6 +141,6 @@
     "price_range": "$21,000 - $26,000",
     "description": "The Nissan Sentra is a compact sedan offering refined styling, excellent fuel economy, and advanced safety features at an affordable price.",
     "key_features": ["Safety Shield 360", "Wireless Apple CarPlay", "8-inch Touchscreen", "Remote Start", "Automatic Emergency Braking"],
-    "image_url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=800&auto=format&fit=crop&q=80"
   }
 ]

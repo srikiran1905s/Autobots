@@ -13,7 +13,7 @@
     "price_range": "$22,000 - $30,000",
     "description": "The Hyundai Elantra is a compact sedan offering bold styling, excellent fuel economy, and comprehensive warranty coverage.",
     "key_features": ["10.25-inch Touchscreen", "Wireless Apple CarPlay", "SmartSense Safety", "N Line Sporty Model", "Bose Premium Audio"],
-    "image_url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Hyundai",
@@ -29,7 +29,7 @@
     "price_range": "$29,000 - $42,000",
     "description": "The Hyundai Tucson is a compact SUV featuring futuristic styling, hybrid options, and advanced technology.",
     "key_features": ["Dual Touchscreen Display", "Hidden LED Lights", "Hybrid Powertrain", "SmartSense Safety Suite", "Digital Key"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Hyundai",
@@ -45,7 +45,7 @@
     "price_range": "$37,000 - $52,000",
     "description": "The Hyundai Palisade is a three-row midsize SUV offering exceptional value, spacious interior, and upscale features.",
     "key_features": ["Three-Row Seating", "12.3-inch Digital Cluster", "Harman Kardon Audio", "Highway Driving Assist", "Calligraphy Luxury Trim"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Hyundai",
@@ -61,7 +61,7 @@
     "price_range": "$27,000 - $36,000",
     "description": "The Hyundai Sonata is a midsize sedan featuring sleek design, advanced technology, and available N Line performance model.",
     "key_features": ["10.25-inch Display", "Digital Key 2.0", "Bose Premium Audio", "SmartSense Safety", "Remote Smart Parking Assist"],
-    "image_url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Hyundai",
@@ -77,7 +77,7 @@
     "price_range": "$43,000 - $56,000",
     "description": "The Hyundai IONIQ 5 is an all-electric SUV featuring retro-futuristic design, ultra-fast charging, and impressive range.",
     "key_features": ["Up to 303 miles range", "350kW Fast Charging", "Vehicle-to-Load", "Augmented Reality HUD", "Relaxation Seats"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Hyundai",
@@ -93,7 +93,7 @@
     "price_range": "$32,000 - $45,000",
     "description": "The Hyundai Santa Fe is a two-row midsize SUV offering modern styling, hybrid efficiency, and advanced safety features.",
     "key_features": ["Hybrid Option", "12.3-inch Touchscreen", "Curved Display", "Highway Driving Assist 2", "Smart Park"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Hyundai",
@@ -109,7 +109,7 @@
     "price_range": "$24,000 - $40,000",
     "description": "The Hyundai Kona is a subcompact SUV offering bold styling, available electric powertrain, and fun-to-drive dynamics.",
     "key_features": ["EV Option Available", "10.25-inch Display", "N Line Sport Model", "SmartSense Safety", "Head-Up Display"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Hyundai",
@@ -125,7 +125,7 @@
     "price_range": "$21,000 - $25,000",
     "description": "The Hyundai Venue is a subcompact SUV offering urban-friendly size, affordable pricing, and modern features.",
     "key_features": ["8-inch Touchscreen", "Wireless Apple CarPlay", "Forward Collision Avoidance", "LED Headlights", "Rear Camera"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Hyundai",
@@ -141,6 +141,6 @@
     "price_range": "$44,000 - $62,000",
     "description": "The Genesis GV70 is a luxury compact SUV offering premium materials, powerful engines, and advanced technology from Hyundai's luxury brand.",
     "key_features": ["Quilted Nappa Leather", "14.5-inch Touchscreen", "3D Digital Cluster", "Bang & Olufsen Audio", "Active Road Noise Cancellation"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   }
 ]

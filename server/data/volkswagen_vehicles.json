@@ -29,7 +29,7 @@
     "price_range": "$29,000 - $42,000",
     "description": "The Volkswagen Tiguan is a compact SUV offering three-row seating, German engineering, and available 4MOTION AWD.",
     "key_features": ["Three-Row Seating", "4MOTION AWD", "Digital Cockpit", "App-Connect", "Panoramic Sunroof"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Volkswagen",
@@ -61,7 +61,7 @@
     "price_range": "$37,000 - $52,000",
     "description": "The Volkswagen Atlas is a three-row midsize SUV offering spacious interior, available V6 power, and 4MOTION AWD.",
     "key_features": ["Three-Row Seating", "4MOTION AWD", "Digital Cockpit", "Easy Open Power Liftgate", "Fender Premium Audio"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Volkswagen",
@@ -77,7 +77,7 @@
     "price_range": "$42,000 - $54,000",
     "description": "The Volkswagen ID.4 is an all-electric SUV offering impressive range, spacious interior, and intuitive technology.",
     "key_features": ["Up to 275 miles range", "125kW DC Fast Charging", "ID.Light", "Travel Assist", "AR Head-Up Display"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Volkswagen",
@@ -93,7 +93,7 @@
     "price_range": "$26,000 - $35,000",
     "description": "The Volkswagen Taos is a subcompact SUV offering European style, efficient turbocharged engine, and advanced tech.",
     "key_features": ["Digital Cockpit", "IQ.DRIVE", "Wireless Charging", "Panoramic Sunroof", "Hands-Free Easy Open Liftgate"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Volkswagen",

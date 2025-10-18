@@ -13,7 +13,7 @@
     "price_range": "$24,000 - $34,000",
     "description": "The Mazda3 is a compact sedan offering premium interior, engaging driving dynamics, and available turbo power.",
     "key_features": ["Skyactiv Technology", "i-Activsense Safety", "Premium Interior", "Bose Audio", "Available Turbo"],
-    "image_url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mazda",
@@ -29,7 +29,7 @@
     "price_range": "$30,000 - $41,000",
     "description": "The Mazda CX-5 is a compact SUV combining upscale interior, sporty handling, and available turbocharged power.",
     "key_features": ["i-Activ AWD", "10.25-inch Display", "Bose Premium Audio", "Turbo Engine Available", "Driver Attention Alert"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mazda",
@@ -45,7 +45,7 @@
     "price_range": "$32,000 - $46,000",
     "description": "The Mazda CX-50 is a rugged compact SUV offering off-road capability, premium interior, and standard AWD.",
     "key_features": ["Standard AWD", "Off-Road Capability", "Panoramic Moonroof", "12.3-inch Display", "Meridian Audio"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mazda",
@@ -61,7 +61,7 @@
     "price_range": "$42,000 - $60,000",
     "description": "The Mazda CX-90 is a three-row midsize SUV offering luxury features, powerful engines, and premium materials.",
     "key_features": ["Three-Row Seating", "Inline-6 Turbo", "PHEV Option", "12.3-inch Display", "Premium Nappa Leather"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mazda",
@@ -77,7 +77,7 @@
     "price_range": "$29,000 - $38,000",
     "description": "The Mazda MX-5 Miata is a legendary roadster offering pure driving joy, perfect 50/50 weight distribution, and timeless design.",
     "key_features": ["Soft-Top / RF Hard-Top", "50/50 Weight Distribution", "Bilstein Dampers", "Limited Slip Differential", "Brembo Brakes (RF)"],
-    "image_url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mazda",
@@ -93,7 +93,7 @@
     "price_range": "$26,000 - $36,000",
     "description": "The Mazda CX-30 is a subcompact SUV offering premium interior, sporty handling, and upscale features.",
     "key_features": ["Premium Interior", "8.8-inch Display", "Bose Audio", "i-Activsense Safety", "Available Turbo"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mazda",
@@ -109,7 +109,7 @@
     "price_range": "$27,000 - $37,000",
     "description": "The Mazda6 is a midsize sedan offering refined styling, upscale interior, and engaging driving dynamics.",
     "key_features": ["Premium Cabin", "Turbo Engine", "Bose Premium Audio", "i-Activsense", "Signature Trim Available"],
-    "image_url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mazda",
@@ -125,7 +125,7 @@
     "price_range": "$40,000 - $55,000",
     "description": "The Mazda CX-70 is a two-row midsize SUV offering luxury, performance, and available plug-in hybrid technology.",
     "key_features": ["Inline-6 Turbo", "PHEV Option", "Premium Materials", "12.3-inch Curved Display", "Meridian Audio"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   },
   {
     "make": "Mazda",
@@ -141,6 +141,6 @@
     "price_range": "$35,000 - $40,000",
     "description": "The Mazda MX-30 is an electric SUV featuring unique freestyle doors, eco-friendly materials, and Mazda's driving dynamics.",
     "key_features": ["Freestyle Doors", "Cork Interior Accents", "Recycled Materials", "100 miles range", "Premium Feel"],
-    "image_url": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&auto=format&fit=crop&q=80"
+    "image_url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&auto=format&fit=crop&q=80"
   }
 ]
