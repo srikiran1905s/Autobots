@@ -330,10 +330,18 @@ app.get('/api/vehicles', async (req, res) => {
 // Get vehicles by make
 app.get('/api/vehicles/:make', async (req, res) => {
   try {
-    const { make } = req.params;
+    // Decode URL parameter and handle special characters
+    let { make } = req.params;
+    make = decodeURIComponent(make);
+    
+    // Escape special regex characters except for spaces and hyphens
+    const escapedMake = make.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    
     const vehicles = await Vehicle.find({ 
-      make: new RegExp(`^${make}$`, 'i') 
+      make: new RegExp(`^${escapedMake}$`, 'i') 
     }).sort({ model: 1 });
+    
+    console.log(`Searching for vehicles with make: ${make}, found: ${vehicles.length}`);
     
     if (vehicles.length === 0) {
       return res.status(404).json({
