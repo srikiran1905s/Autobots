@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   User, Mail, Phone, MapPin, Edit, Trash2,
-  Shield, Key, Bell, Globe, Eye, LogOut, HelpCircle, 
+  Shield, Bell, Globe, Eye, LogOut, HelpCircle, 
   MessageSquare, ThumbsUp, Bookmark, Settings, Camera,
   ChevronRight, CheckCircle2, XCircle, Clock, Lock
 } from "lucide-react";
@@ -42,8 +42,7 @@ const Profile = () => {
   const [preferences, setPreferences] = useState({
     profileVisibility: true,
     commentPrivacy: false,
-    language: "en",
-    twoFactorAuth: false
+    language: "en"
   });
 
   // Mock Data
@@ -441,24 +440,6 @@ const Profile = () => {
                 </h2>
 
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 bg-background rounded-lg border border-border">
-                    <div>
-                      <Label className="font-rajdhani font-semibold">Two-Factor Auth</Label>
-                      <p className="text-sm text-muted-foreground">Extra security layer</p>
-                    </div>
-                    <Switch
-                      checked={preferences.twoFactorAuth}
-                      onCheckedChange={() => togglePreference('twoFactorAuth')}
-                    />
-                  </div>
-
-                  <Button variant="outline" className="w-full justify-start font-rajdhani font-semibold">
-                    <Key className="w-4 h-4 mr-2" />
-                    Manage API Keys
-                  </Button>
-
-                  <Separator />
-
                   <Button 
                     variant="outline" 
                     className="w-full justify-start font-rajdhani font-semibold"
