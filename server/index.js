@@ -403,6 +403,10 @@ app.get('/api/vehicles/makes/list', async (req, res) => {
   }
 });
 
+// Chatbot Routes
+const chatbotRoutes = require('./routes/chatbot');
+app.use('/api/chatbot', chatbotRoutes);
+
 // Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
