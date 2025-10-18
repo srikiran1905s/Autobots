@@ -1,10 +1,18 @@
 import { Link, useLocation } from "react-router-dom";
-import { LogIn } from "lucide-react";
+import { LogIn, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "../../logo.png";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const location = useLocation();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
+  useEffect(() => {
+    // Check if user is logged in by checking localStorage
+    const user = localStorage.getItem('user');
+    setIsLoggedIn(!!user);
+  }, [location.pathname]);
   
   const isActive = (path: string) => {
     if (path === "/") {
@@ -59,15 +67,27 @@ const Header = () => {
                 isActive("/obd") ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
               }`} />
             </Link>
-            <Link to="/signin">
-              <Button 
-                variant="outline" 
-                className="font-rajdhani font-semibold text-base border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all"
-              >
-                <LogIn className="w-4 h-4 mr-2" />
-                Sign In
-              </Button>
-            </Link>
+            {isLoggedIn ? (
+              <Link to="/profile">
+                <Button 
+                  variant="outline" 
+                  className="font-rajdhani font-semibold text-base border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+                >
+                  <User className="w-4 h-4 mr-2" />
+                  Profile
+                </Button>
+              </Link>
+            ) : (
+              <Link to="/signin">
+                <Button 
+                  variant="outline" 
+                  className="font-rajdhani font-semibold text-base border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+                >
+                  <LogIn className="w-4 h-4 mr-2" />
+                  Sign In
+                </Button>
+              </Link>
+            )}
           </nav>
         </div>
       </div>

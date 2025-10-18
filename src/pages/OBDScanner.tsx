@@ -241,7 +241,7 @@ const OBDScanner = () => {
               <Input 
                 value={obdCode}
                 onChange={(e) => setObdCode(e.target.value.toUpperCase())}
-                placeholder=""
+                placeholder="Enter OBD code (e.g., P0171)"
                 className="flex-1 bg-muted border-primary/20 font-roboto-mono text-lg h-14 px-6"
                 onKeyPress={(e) => e.key === "Enter" && handleDiagnose()}
               />

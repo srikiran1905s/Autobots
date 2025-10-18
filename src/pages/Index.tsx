@@ -94,24 +94,6 @@ const Index = () => {
             </p>
           </motion.div>
 
-          <div className="mb-12 flex justify-center">
-            <div className="flex flex-wrap justify-center gap-8">
-              {manufacturers.slice(0, 6).map((m) => (
-                <motion.div
-                  key={m.id}
-                  whileHover={{ scale: 1.15, y: -5 }}
-                  className="w-24 h-24 bg-white rounded-xl p-3 shadow-lg hover:shadow-2xl transition-all cursor-pointer"
-                >
-                  <img 
-                    src={m.logo} 
-                    alt={`${m.name} logo`}
-                    className="w-full h-full object-contain"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {manufacturers.map((manufacturer, index) => (
               <ManufacturerCard
