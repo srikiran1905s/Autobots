@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bot, X, Send, Loader2 } from "lucide-react";
+import { Bot, X, Send, Loader2, ImagePlus, XCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 
@@ -8,6 +8,11 @@ interface Message {
   role: 'user' | 'assistant';
   content: string;
   timestamp: number;
+  image?: {
+    url: string;
+    name: string;
+    size: number;
+  };
 }
 
 interface ChatContext {
@@ -35,8 +40,12 @@ const FloatingChatbot = ({ context }: FloatingChatbotProps) => {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [uploadProgress, setUploadProgress] = useState<number>(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Load chat history from localStorage
   useEffect(() => {
@@ -51,7 +60,7 @@ const FloatingChatbot = ({ context }: FloatingChatbotProps) => {
       // Initialize with welcome message
       const welcomeMessage: Message = {
         role: 'assistant',
-        content: "Hello! I'm your AutoBots AI assistant, an expert automotive mechanic. I can help you with vehicle diagnostics, repair guidance, OBD code explanations, and maintenance advice. How can I assist you today?",
+        content: "Hello! I'm your AutoBots AI assistant, an expert automotive mechanic. I can help you with vehicle diagnostics, repair guidance, OBD code explanations, and maintenance advice. You can also upload images of your vehicle, engine, dashboard lights, or OBD screens for visual diagnosis. How can I assist you today?",
         timestamp: Date.now()
       };
       setMessages([welcomeMessage]);
@@ -77,15 +86,121 @@ const FloatingChatbot = ({ context }: FloatingChatbotProps) => {
     }
   }, [isOpen]);
 
+  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Validate file type
+    if (!file.type.match(/image\/(jpeg|jpg|png)/)) {
+      alert('Please upload only JPG or PNG images');
+      return;
+    }
+
+    // Validate file size (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      alert('Image size should be less than 5MB');
+      return;
+    }
+
+    setSelectedImage(file);
+    
+    // Create preview
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImagePreview(reader.result as string);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleRemoveImage = () => {
+    setSelectedImage(null);
+    setImagePreview(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
+
   const handleSend = async () => {
-    if (!input.trim() || isLoading) return;
+    if ((!input.trim() && !selectedImage) || isLoading) return;
 
     const userMessage: Message = {
       role: 'user',
-      content: input.trim(),
+      content: input.trim() || 'Analyzing uploaded image...',
       timestamp: Date.now()
     };
 
+    // If image is selected, upload it first
+    if (selectedImage) {
+      setUploadProgress(10);
+      const formData = new FormData();
+      formData.append('image', selectedImage);
+      formData.append('prompt', input.trim() || 'What do you see in this image? Please provide a detailed automotive diagnosis.');
+      
+      // Add context if available
+      if (context) {
+        formData.append('context', JSON.stringify(context));
+      }
+      
+      // Add chat history
+      formData.append('messages', JSON.stringify([...messages, userMessage].map(msg => ({
+        role: msg.role,
+        content: msg.content
+      }))));
+
+      setUploadProgress(30);
+      
+      try {
+        const uploadResponse = await fetch('http://localhost:5000/api/chatbot/vision', {
+          method: 'POST',
+          body: formData
+        });
+
+        setUploadProgress(80);
+        const uploadData = await uploadResponse.json();
+        
+        if (uploadData.success) {
+          // Add user message with image
+          const userMessageWithImage: Message = {
+            ...userMessage,
+            image: {
+              url: uploadData.imageUrl,
+              name: selectedImage.name,
+              size: selectedImage.size
+            }
+          };
+          setMessages(prev => [...prev, userMessageWithImage]);
+          
+          // Add AI response
+          const assistantMessage: Message = {
+            role: 'assistant',
+            content: uploadData.message,
+            timestamp: Date.now()
+          };
+          setMessages(prev => [...prev, assistantMessage]);
+          
+          setUploadProgress(100);
+        } else {
+          throw new Error(uploadData.error || 'Failed to process image');
+        }
+      } catch (error) {
+        console.error('Image upload error:', error);
+        const errorMessage: Message = {
+          role: 'assistant',
+          content: "I apologize, but I'm having trouble processing the image. Please try again or ensure the backend server is running.",
+          timestamp: Date.now()
+        };
+        setMessages(prev => [...prev, errorMessage]);
+      } finally {
+        setInput("");
+        handleRemoveImage();
+        setIsLoading(false);
+        setIsTyping(false);
+        setUploadProgress(0);
+      }
+      return;
+    }
+
+    // Regular text message without image
     setMessages(prev => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
@@ -238,6 +353,18 @@ const FloatingChatbot = ({ context }: FloatingChatbotProps) => {
                         ? "bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-tr-sm" 
                         : "bg-card border border-border text-foreground rounded-tl-sm"
                     }`}>
+                      {msg.image && (
+                        <div className="mb-2">
+                          <img 
+                            src={msg.image.url} 
+                            alt={msg.image.name}
+                            className="rounded-lg max-w-full h-auto max-h-64 object-contain border border-white/20"
+                          />
+                          <p className="text-xs opacity-70 mt-1">
+                            📎 {msg.image.name} ({(msg.image.size / 1024).toFixed(0)} KB)
+                          </p>
+                        </div>
+                      )}
                       <p className="text-sm leading-relaxed whitespace-pre-wrap break-words">
                         {msg.content}
                       </p>
@@ -285,7 +412,60 @@ const FloatingChatbot = ({ context }: FloatingChatbotProps) => {
 
             {/* Input Area */}
             <div className="p-4 border-t border-border bg-gradient-to-r from-card/50 to-secondary/30 backdrop-blur-sm">
+              {/* Image Preview */}
+              {imagePreview && (
+                <div className="mb-3 relative">
+                  <div className="relative inline-block">
+                    <img 
+                      src={imagePreview} 
+                      alt="Preview" 
+                      className="max-h-32 rounded-lg border-2 border-primary/30"
+                    />
+                    <button
+                      onClick={handleRemoveImage}
+                      className="absolute -top-2 -right-2 bg-destructive text-destructive-foreground rounded-full p-1 hover:bg-destructive/80 transition-colors"
+                    >
+                      <XCircle className="w-4 h-4" />
+                    </button>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {selectedImage?.name} • {((selectedImage?.size || 0) / 1024).toFixed(0)} KB
+                  </p>
+                </div>
+              )}
+              
+              {/* Upload Progress */}
+              {uploadProgress > 0 && uploadProgress < 100 && (
+                <div className="mb-3">
+                  <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
+                    <div 
+                      className="bg-primary h-full transition-all duration-300"
+                      style={{ width: `${uploadProgress}%` }}
+                    />
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">Uploading... {uploadProgress}%</p>
+                </div>
+              )}
+              
               <div className="flex gap-3 items-end">
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/jpeg,image/jpg,image/png"
+                  onChange={handleImageSelect}
+                  className="hidden"
+                />
+                <Button
+                  type="button"
+                  size="icon"
+                  variant="outline"
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={isLoading}
+                  className="h-12 w-12 rounded-xl border-primary/20 hover:bg-primary/10 hover:border-primary transition-all duration-300"
+                  title="Upload image"
+                >
+                  <ImagePlus className="w-5 h-5" />
+                </Button>
                 <Textarea 
                   ref={textareaRef}
                   value={input}
@@ -312,7 +492,7 @@ const FloatingChatbot = ({ context }: FloatingChatbotProps) => {
               </div>
               <div className="flex items-center justify-between mt-3 px-1">
                 <p className="text-xs text-muted-foreground/80 font-rajdhani">
-                  💡 Your AI automotive expert
+                  💡 Your AI automotive expert • 📷 Upload images for visual diagnosis
                 </p>
                 <p className="text-xs text-muted-foreground/60 font-rajdhani">
                   Enter to send • Shift+Enter new line
