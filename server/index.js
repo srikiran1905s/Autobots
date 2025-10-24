@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
+const fs = require('fs');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -14,9 +16,81 @@ app.use(express.json());
 // MongoDB Connection
 const MONGODB_URI = 'mongodb+srv://2410030489_db_user:Svvk%402227@cluster0.x7avxez.mongodb.net/autobots?retryWrites=true&w=majority';
 
-mongoose.connect(MONGODB_URI)
-  .then(() => console.log('✅ Connected to MongoDB'))
-  .catch((err) => console.error('❌ MongoDB connection error:', err));
+// Track MongoDB connection status
+let isMongoDBConnected = false;
+
+// In-memory storage fallback
+const inMemoryUsers = new Map();
+const inMemoryOBDCodes = new Map();
+const inMemoryVehicles = new Map();
+
+// Load OBD codes from JSON files into memory
+function loadOBDCodesIntoMemory() {
+  try {
+    const dataDir = path.join(__dirname, 'data');
+    
+    // Load generic codes
+    const genericCodesPath = path.join(dataDir, 'generic_codes.json');
+    if (fs.existsSync(genericCodesPath)) {
+      const genericCodes = JSON.parse(fs.readFileSync(genericCodesPath, 'utf8'));
+      genericCodes.forEach(code => {
+        inMemoryOBDCodes.set(code.code, { ...code, make: 'Generic' });
+      });
+      console.log(`📦 Loaded ${genericCodes.length} generic OBD codes`);
+    }
+    
+    // Load additional generic codes
+    const additionalCodesPath = path.join(dataDir, 'additional_generic_codes.json');
+    if (fs.existsSync(additionalCodesPath)) {
+      const additionalCodes = JSON.parse(fs.readFileSync(additionalCodesPath, 'utf8'));
+      additionalCodes.forEach(code => {
+        inMemoryOBDCodes.set(code.code, code);
+      });
+      console.log(`📦 Loaded ${additionalCodes.length} additional generic OBD codes`);
+    }
+    
+    // Load Toyota codes
+    const toyotaCodesPath = path.join(dataDir, 'toyota_codes.json');
+    if (fs.existsSync(toyotaCodesPath)) {
+      const toyotaCodes = JSON.parse(fs.readFileSync(toyotaCodesPath, 'utf8'));
+      toyotaCodes.forEach(code => {
+        inMemoryOBDCodes.set(code.code, { ...code, make: 'Toyota' });
+      });
+      console.log(`📦 Loaded ${toyotaCodes.length} Toyota OBD codes`);
+    }
+    
+    // Load Ford codes
+    const fordCodesPath = path.join(dataDir, 'ford_codes.json');
+    if (fs.existsSync(fordCodesPath)) {
+      const fordCodes = JSON.parse(fs.readFileSync(fordCodesPath, 'utf8'));
+      fordCodes.forEach(code => {
+        inMemoryOBDCodes.set(code.code, { ...code, make: 'Ford' });
+      });
+      console.log(`📦 Loaded ${fordCodes.length} Ford OBD codes`);
+    }
+    
+    console.log(`✅ Total OBD codes in memory: ${inMemoryOBDCodes.size}`);
+  } catch (error) {
+    console.error('❌ Error loading OBD codes:', error.message);
+  }
+}
+
+mongoose.connect(MONGODB_URI, {
+  serverSelectionTimeoutMS: 5000,
+  socketTimeoutMS: 45000,
+})
+  .then(() => {
+    console.log('✅ Connected to MongoDB');
+    isMongoDBConnected = true;
+  })
+  .catch((err) => {
+    console.error('❌ MongoDB connection error:', err.message);
+    console.log('⚠️  Running in IN-MEMORY mode (data will not persist)');
+    console.log('💡 To fix: Whitelist your IP in MongoDB Atlas or check network connection');
+    isMongoDBConnected = false;
+    // Load OBD codes from JSON files
+    loadOBDCodesIntoMemory();
+  });
 
 // User Schema
 const userSchema = new mongoose.Schema({
@@ -127,35 +201,65 @@ app.post('/api/signup', async (req, res) => {
       });
     }
 
-    // Check if user already exists
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'User with this email already exists' 
-      });
-    }
-
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create new user
-    const newUser = new User({
-      email,
-      password: hashedPassword
-    });
-
-    await newUser.save();
-
-    res.status(201).json({ 
-      success: true, 
-      message: 'User registered successfully',
-      user: {
-        id: newUser._id,
-        email: newUser.email,
-        createdAt: newUser.createdAt
+    if (isMongoDBConnected) {
+      // Use MongoDB
+      // Check if user already exists
+      const existingUser = await User.findOne({ email });
+      if (existingUser) {
+        return res.status(400).json({ 
+          success: false, 
+          message: 'User with this email already exists' 
+        });
       }
-    });
+
+      // Create new user
+      const newUser = new User({
+        email,
+        password: hashedPassword
+      });
+
+      await newUser.save();
+
+      res.status(201).json({ 
+        success: true, 
+        message: 'User registered successfully',
+        user: {
+          id: newUser._id,
+          email: newUser.email,
+          createdAt: newUser.createdAt
+        }
+      });
+    } else {
+      // Use in-memory storage
+      if (inMemoryUsers.has(email.toLowerCase())) {
+        return res.status(400).json({ 
+          success: false, 
+          message: 'User with this email already exists' 
+        });
+      }
+
+      const newUser = {
+        id: Date.now().toString(),
+        email: email.toLowerCase(),
+        password: hashedPassword,
+        createdAt: new Date()
+      };
+
+      inMemoryUsers.set(email.toLowerCase(), newUser);
+
+      res.status(201).json({ 
+        success: true, 
+        message: 'User registered successfully (in-memory)',
+        user: {
+          id: newUser.id,
+          email: newUser.email,
+          createdAt: newUser.createdAt
+        }
+      });
+    }
   } catch (error) {
     console.error('Sign up error:', error);
     res.status(500).json({ 
@@ -178,32 +282,61 @@ app.post('/api/signin', async (req, res) => {
       });
     }
 
-    // Find user
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(401).json({ 
-        success: false, 
-        message: 'Invalid email or password' 
-      });
-    }
-
-    // Compare password
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid) {
-      return res.status(401).json({ 
-        success: false, 
-        message: 'Invalid email or password' 
-      });
-    }
-
-    res.json({ 
-      success: true, 
-      message: 'Sign in successful',
-      user: {
-        id: user._id,
-        email: user.email
+    if (isMongoDBConnected) {
+      // Use MongoDB
+      const user = await User.findOne({ email });
+      if (!user) {
+        return res.status(401).json({ 
+          success: false, 
+          message: 'Invalid email or password' 
+        });
       }
-    });
+
+      // Compare password
+      const isPasswordValid = await bcrypt.compare(password, user.password);
+      if (!isPasswordValid) {
+        return res.status(401).json({ 
+          success: false, 
+          message: 'Invalid email or password' 
+        });
+      }
+
+      res.json({ 
+        success: true, 
+        message: 'Sign in successful',
+        user: {
+          id: user._id,
+          email: user.email
+        }
+      });
+    } else {
+      // Use in-memory storage
+      const user = inMemoryUsers.get(email.toLowerCase());
+      if (!user) {
+        return res.status(401).json({ 
+          success: false, 
+          message: 'Invalid email or password' 
+        });
+      }
+
+      // Compare password
+      const isPasswordValid = await bcrypt.compare(password, user.password);
+      if (!isPasswordValid) {
+        return res.status(401).json({ 
+          success: false, 
+          message: 'Invalid email or password' 
+        });
+      }
+
+      res.json({ 
+        success: true, 
+        message: 'Sign in successful (in-memory)',
+        user: {
+          id: user.id,
+          email: user.email
+        }
+      });
+    }
   } catch (error) {
     console.error('Sign in error:', error);
     res.status(500).json({ 
@@ -236,19 +369,39 @@ app.get('/api/users', async (req, res) => {
 app.get('/api/obd/:code', async (req, res) => {
   try {
     const { code } = req.params;
-    const obdCode = await OBDCode.findOne({ code: code.toUpperCase() });
+    const codeUpper = code.toUpperCase();
     
-    if (!obdCode) {
-      return res.status(404).json({ 
-        success: false, 
-        message: 'OBD code not found' 
+    if (isMongoDBConnected) {
+      // Use MongoDB
+      const obdCode = await OBDCode.findOne({ code: codeUpper });
+      
+      if (!obdCode) {
+        return res.status(404).json({ 
+          success: false, 
+          message: 'OBD code not found' 
+        });
+      }
+
+      res.json({ 
+        success: true, 
+        data: obdCode 
+      });
+    } else {
+      // Use in-memory storage
+      const obdCode = inMemoryOBDCodes.get(codeUpper);
+      
+      if (!obdCode) {
+        return res.status(404).json({ 
+          success: false, 
+          message: 'OBD code not found' 
+        });
+      }
+
+      res.json({ 
+        success: true, 
+        data: obdCode 
       });
     }
-
-    res.json({ 
-      success: true, 
-      data: obdCode 
-    });
   } catch (error) {
     console.error('Error fetching OBD code:', error);
     res.status(500).json({ 

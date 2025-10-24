@@ -31,10 +31,9 @@ const ManufacturerModels = () => {
       
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:5000/api/vehicles/${make}`);
-        const data = await response.json();
-        
-        if (data.success) {
+        const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        const response = await fetch(`${API_BASE}/api/vehicles/${make}`);
+        const data = await response.json();        if (data.success) {
           setVehicles(data.data);
         }
       } catch (error) {
